@@ -1,9 +1,15 @@
 <script lang="ts" setup>
 import HelloWorld from '@/components/HelloWorld.vue';
+
+const testClick = () => {
+  alert('clicks')
+  console.log('document', document);
+
+}
 </script>
 
 <template>
-  <div class="mainContainer">
+  <!-- <div class="mainContainer">
     <a href="https://wxt.dev" target="_blank">
       <img src="/wxt.svg" class="logo" alt="WXT logo" />
     </a>
@@ -11,28 +17,18 @@ import HelloWorld from '@/components/HelloWorld.vue';
       <img src="@/assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
     <HelloWorld msg="WXT + Vue" />
+  </div> -->
+  <div>
+    <div>
+      <button @click="testClick">click3</button>
+    </div>
   </div>
 </template>
 
 <style scoped>
 .mainContainer {
-  background: rgba(1, 1, 1, .7);
+  /* background: rgba(1, 1, 1, .7);
   z-index: 20000;
-  position: relative;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #54bc4ae0);
-}
-
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+  position: relative; */
 }
 </style>
