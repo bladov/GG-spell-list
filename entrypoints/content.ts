@@ -4,13 +4,17 @@
 
 
 
+function getDoc() {
+  return document.querySelector('textarea[title="Text Chat Input"]')
+}
 export default defineContentScript({
   // matches: ['*://*.youtube.com/*'],
   matches: ["*://*/*"],
   main(ctx) {
     console.log('ctx test', ctx);
     console.log('document', document);
-    alert('222222')
+    mainWatch('0000')
+
 
     // ctx.addEventListener(window, 'wxt:locationchange', ({ newUrl }) => {
     //   if (watchPattern.includes(newUrl)) mainWatch(ctx);
@@ -18,9 +22,12 @@ export default defineContentScript({
   },
 });
 
-function mainWatch(ctx: any) {
-  console.log('content ctx', ctx);
+export function mainWatch(msg: string) {
+  const test: any = getDoc()
+  console.log('test', test);
+  if (!test) return
 
+  test.value = msg
 }
 
 

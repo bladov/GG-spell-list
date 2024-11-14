@@ -25,7 +25,8 @@ export default defineConfig({
         "js": ["content-scripts/content.js"],
         matches: ["*://*/*"],
       }
-    ]
+    ],
+    "host_permissions": ["*://*/*"]
   },
   outDir: '/Users/bladov/GG-spell-list/dist'
 });

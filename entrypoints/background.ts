@@ -10,7 +10,7 @@ export default defineBackground(() => {
   chrome.tabs.onUpdated.addListener(async (tabId, info, tab) => {
     if (!tab.url) return;
     const url = new URL(tab.url);
-    alert(`url - ${url}`)
+    console.log(`url - ${url}`);
     // Enables the side panel on google.com
     if (url.origin.includes(roll20Origin) || url.origin.includes(devOrigin)) {
       await chrome.sidePanel.setOptions({

@@ -1,9 +1,45 @@
 <script lang="ts" setup>
 import HelloWorld from '@/components/HelloWorld.vue';
 
+
+function onResult() {
+  console.log('onResult');
+
+}
+
+function grabImages() {
+  const textarea: any = document.querySelector('textarea[title="Text Chat Input"]')
+  textarea.value = '12312312312'
+}
+
+
+function execScript(tab: any) {
+  // Выполнить функцию на странице указанной вкладки
+  // и передать результат ее выполнения в функцию onResult
+  chrome.scripting.executeScript(
+    {
+      target: { tabId: tab.id, allFrames: true },
+      func: grabImages
+    },
+    onResult
+  )
+}
+
+
 const testClick = () => {
-  alert('clicks')
+  console.log('clicks');
   console.log('document', document);
+
+
+  chrome.tabs.query({ active: true }, function (tabs) {
+    var tab = tabs[0];
+    // и если она есть, то выполнить на ней скрипт
+    if (tab) {
+      execScript(tab);
+    } else {
+      alert("There are no active tabs")
+    }
+  })
 
 }
 </script>
@@ -20,7 +56,7 @@ const testClick = () => {
   </div> -->
   <div>
     <div>
-      <button @click="testClick">click3</button>
+      <button @click="testClick">test</button>
     </div>
   </div>
 </template>
