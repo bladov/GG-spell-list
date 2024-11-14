@@ -5,7 +5,9 @@ export default defineConfig({
   extensionApi: 'chrome',
   modules: ['@wxt-dev/module-vue'],
   manifest: {
-    permissions: ['storage', 'tabs', "scripting", "activeTab", "sidePanel"],
+    name: 'GG spell list',
+    description: 'Лист заклинаний для GG',
+    permissions: ['storage', 'tabs', "scripting", "activeTab", "sidePanel", "storage"],
     // background: {
     //   "service_worker": "service-worker.js"
     // },
@@ -26,7 +28,8 @@ export default defineConfig({
         matches: ["*://*/*"],
       }
     ],
-    "host_permissions": ["*://*/*"]
+    "host_permissions": ["*://*/*"],
   },
-  outDir: '/Users/bladov/GG-spell-list/dist'
+  outDir: '/Users/bladov/GG-spell-list/dist',
+  srcDir: 'src',
 });

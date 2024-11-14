@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import HelloWorld from '@/components/HelloWorld.vue';
+import HelloWorld from '@/src/components/HelloWorld.vue';
 
 
 function onResult() {
@@ -25,11 +25,9 @@ function execScript(tab: any) {
   )
 }
 
-
 const testClick = () => {
   console.log('clicks');
   console.log('document', document);
-
 
   chrome.tabs.query({ active: true }, function (tabs) {
     var tab = tabs[0];
