@@ -1,44 +1,13 @@
 <script lang="ts" setup>
 import HelloWorld from '@/src/components/HelloWorld.vue';
+import { sendMsgToChat } from '@/utils/sendMsgToChat';
 
-
-function onResult() {
-  console.log('onResult');
-
-}
-
-function grabImages() {
-  const textarea: any = document.querySelector('textarea[title="Text Chat Input"]')
-  textarea.value = '12312312312'
-}
-
-
-function execScript(tab: any) {
-  // Выполнить функцию на странице указанной вкладки
-  // и передать результат ее выполнения в функцию onResult
-  chrome.scripting.executeScript(
-    {
-      target: { tabId: tab.id, allFrames: true },
-      func: grabImages
-    },
-    onResult
-  )
-}
 
 const testClick = () => {
-  console.log('clicks');
-  console.log('document', document);
-
-  chrome.tabs.query({ active: true }, function (tabs) {
-    var tab = tabs[0];
-    // и если она есть, то выполнить на ней скрипт
-    if (tab) {
-      execScript(tab);
-    } else {
-      alert("There are no active tabs")
-    }
-  })
-
+  sendMsgToChat('Тестовая запись3!')
+  sendMsgToChat('Тестовая запись! [[1d20+5]]')
+  sendMsgToChat('/r 1d10+1d6')
+  sendMsgToChat('/r 20')
 }
 </script>
 
@@ -54,7 +23,7 @@ const testClick = () => {
   </div> -->
   <div>
     <div>
-      <button @click="testClick">test</button>
+      <button @click="testClick">test2</button>
     </div>
   </div>
 </template>
