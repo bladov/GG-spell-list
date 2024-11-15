@@ -14,6 +14,7 @@ declare module 'vue' {
     InputText: typeof import('primevue/inputtext')['default']
     MacrosPanel: typeof import('./src/components/magic-list/MacrosPanel.vue')['default']
     MainTabs: typeof import('./src/components/main-page/MainTabs.vue')['default']
+    Panel: typeof import('primevue/panel')['default']
     PanelMenu: typeof import('primevue/panelmenu')['default']
     Select: typeof import('primevue/select')['default']
     Tab: typeof import('primevue/tab')['default']

@@ -1,8 +1,8 @@
 <template>
     <div>
-        <button @click="testClick">
-            {{ characterStore.test }}
-        </button>
+        <Button @click="testClick">
+            {{ characterStore.test }} 23
+        </Button>
     </div>
 </template>
 

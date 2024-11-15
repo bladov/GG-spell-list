@@ -1,39 +1,51 @@
 <template>
     <div>
         <div class="wrapper">
-            <div class="add-folder">
-                <InputText v-model="folderName" placeholder="Введите название папки" />
-                <Button @click="addFolder" :disabled="folderName.length === 0">Добавить папку</Button>
-            </div>
-
-            <div>
-                <div class="card flex justify-center">
-                    <Select v-model="selectedCountry" :options="countries" filter optionLabel="name"
-                        placeholder="Select a Country" class="w-full md:w-56">
-                        <template #value="slotProps">
-                            <div v-if="slotProps.value" class="flex items-center">
-                                <img :alt="slotProps.value.label"
-                                    src="https://primefaces.org/cdn/primevue/images/flag/flag_placeholder.png"
-                                    :class="`mr-2 flag flag-${slotProps.value.code.toLowerCase()}`"
-                                    style="width: 18px" />
-                                <div>{{ slotProps.value.name }}</div>
-                            </div>
-                            <span v-else>
-                                {{ slotProps.placeholder }}
-                            </span>
-                        </template>
-                        <template #option="slotProps">
-                            <div class="flex items-center">
-                                <img :alt="slotProps.option.label"
-                                    src="https://primefaces.org/cdn/primevue/images/flag/flag_placeholder.png"
-                                    :class="`mr-2 flag flag-${slotProps.option.code.toLowerCase()}`"
-                                    style="width: 18px" />
-                                <div>{{ slotProps.option.name }}</div>
-                            </div>
-                        </template>
-                    </Select>
+            <Panel header="Добавление папок" class="mb-2">
+                <div class="add-folder">
+                    <InputText size="small" class="w-full md:w-56" v-model="folderName"
+                        placeholder="Введите название папки" />
+                    <Button @click="addFolder" :disabled="folderName.length === 0" size="small">Добавить папку</Button>
                 </div>
-            </div>
+            </Panel>
+
+            <Panel header="Добавление персонажей">
+                <div class="add-folder">
+                    <div class="card flex justify-center">
+                        <Select v-model="selectedCountry" :options="countries" filter optionLabel="name"
+                            placeholder="Выберите папку" class="w-full md:w-56">
+                            <template #value="slotProps">
+                                <div v-if="slotProps.value" class="flex items-center">
+                                    <img :alt="slotProps.value.label"
+                                        src="https://primefaces.org/cdn/primevue/images/flag/flag_placeholder.png"
+                                        :class="`mr-2 flag flag-${slotProps.value.code.toLowerCase()}`"
+                                        style="width: 18px" />
+                                    <div>{{ slotProps.value.name }}</div>
+                                </div>
+                                <span v-else>
+                                    {{ slotProps.placeholder }}
+                                </span>
+                            </template>
+                            <template #option="slotProps">
+                                <div class="flex items-center">
+                                    <img :alt="slotProps.option.label"
+                                        src="https://primefaces.org/cdn/primevue/images/flag/flag_placeholder.png"
+                                        :class="`mr-2 flag flag-${slotProps.option.code.toLowerCase()}`"
+                                        style="width: 18px" />
+                                    <div>{{ slotProps.option.name }}</div>
+                                </div>
+                            </template>
+                        </Select>
+                    </div>
+
+                    <InputText size="small" class="w-full md:w-56" v-model="folderName"
+                        placeholder="Введите имя персонажа" />
+
+                    <Button @click="addFolder" :disabled="folderName.length === 0" size="small">Добавить
+                        персонажа</Button>
+                </div>
+
+            </Panel>
         </div>
 
         <PanelMenu :model="items" class="w-full md:w-80" />
