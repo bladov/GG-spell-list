@@ -11,7 +11,7 @@ const tabInfo = reactive([
         value: '0'
     },
     {
-        title: 'Модификаторы',
+        title: 'Персонаж',
         value: '1'
     },
     {

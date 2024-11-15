@@ -5,10 +5,6 @@
 </template>
 
 <script setup lang="ts">
-
-onMounted(() => {
-    alert(23)
-})
 </script>
 
 <style lang="">
