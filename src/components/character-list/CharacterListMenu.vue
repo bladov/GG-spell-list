@@ -1,13 +1,27 @@
 <template>
     <div>
         <div class="wrapper">
-            <Panel header="Добавление папок" class="mb-2">
-                <div class="add-folder">
-                    <InputText size="small" class="w-full md:w-56" v-model="folderName"
-                        placeholder="Введите название папки" />
-                    <Button @click="addFolder" :disabled="folderName.length === 0" size="small">Добавить папку</Button>
+            <div class="card">
+                <div class="mb-5" :style="{ position: 'relative', height: '50px' }">
+
+                    <SpeedDial :model="optionsAdd" direction="left"
+                        :style="{ position: 'absolute', right: 0, bottom: 0 }"
+                        :buttonProps="{ severity: 'success', rounded: true }"
+                        :tooltipOptions="{ position: 'bottom', event: 'hover' }" />
+
+                    <SpeedDial :model="optionsRemove" direction="right"
+                        :style="{ position: 'absolute', left: 0, bottom: 0 }"
+                        :buttonProps="{ severity: 'danger', rounded: true }"
+                        :tooltipOptions="{ position: 'bottom', event: 'hover' }">
+                        <template #button="{ toggleCallback }">
+                            <Button severity="danger" outlined icon="pi pi-trash" class="border"
+                                @click="toggleCallback" />
+                        </template>
+                    </SpeedDial>
+                    <Toast />
                 </div>
-            </Panel>
+            </div>
+
 
             <Panel header="Добавление персонажей">
                 <div class="add-folder">
@@ -38,10 +52,9 @@
                         </Select>
                     </div>
 
-                    <InputText size="small" class="w-full md:w-56" v-model="folderName"
-                        placeholder="Введите имя персонажа" />
+                    <InputText size="small" class="w-full md:w-56" placeholder="Введите имя персонажа" />
 
-                    <Button @click="addFolder" :disabled="folderName.length === 0" size="small">Добавить
+                    <Button @click="addFolder" size="small">Добавить
                         персонажа</Button>
                 </div>
 
@@ -56,10 +69,49 @@
                     </span>
                 </div>
             </template> -->
+
+        <div class="card flex justify-center">
+            <Button label="Show" @click="visible = true" />
+
+            <DialogAddFolder :isOpen="dialogAddFolderIsOpen" @addFolder="addFolder"
+                @closeDialog="dialogAddFolderIsOpen = false" />
+        </div>
     </div>
 </template>
 
 <script setup lang="ts">
+import DialogAddFolder from '@/components/character-list/DialogAddFolder.vue'
+
+const dialogRemoveFolderIsOpen = ref(false)
+const dialogRemoveCharacterIsOpen = ref(false)
+const dialogAddCharacterIsOpen = ref(false)
+const dialogAddFolderIsOpen = ref(false)
+
+const visible = ref(false);
+const optionsAdd = ref([
+    {
+        label: 'Добавить папку',
+        icon: 'pi pi-folder-plus',
+        command: () => dialogAddFolderIsOpen.value = true
+    },
+    {
+        label: 'Добавить персонажа',
+        icon: 'pi pi-address-book',
+        command: () => dialogAddCharacterIsOpen.value = true
+    }
+])
+const optionsRemove = ref([
+    {
+        label: 'Удалить папку',
+        icon: 'pi pi-folder-plus',
+        command: () => dialogRemoveFolderIsOpen.value = true
+    },
+    {
+        label: 'Удалить персонажа',
+        icon: 'pi pi-address-book',
+        command: () => dialogRemoveCharacterIsOpen.value = true
+    }
+])
 const selectedCountry = ref();
 const countries = ref([
     { name: 'Australia', code: 'AU' },
@@ -73,10 +125,9 @@ const countries = ref([
     { name: 'Spain', code: 'ES' },
     { name: 'United States', code: 'US' }
 ]);
-const folderName = ref('')
+
 const addFolder = () => {
     console.log('addFolder');
-    folderName.value = ''
 }
 const items = ref([
     {
