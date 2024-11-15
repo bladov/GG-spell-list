@@ -1,7 +1,16 @@
 import { createApp } from 'vue';
-import './style.css';
+import { createPinia } from 'pinia'
+import PrimeVue from 'primevue/config';
 import App from './App.vue';
+import Aura from '@primevue/themes/aura';
+import './style.css';
+const app = createApp(App)
+const pinia = createPinia()
 
-console.log('document main', document);
-// @ts-ignore
-createApp(App).mount('#app');
+app.use(pinia)
+app.use(PrimeVue, {
+    theme: {
+        preset: Aura
+    }
+});
+app.mount('#app')
