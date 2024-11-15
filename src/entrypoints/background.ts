@@ -12,6 +12,7 @@ export default defineBackground(() => {
     const url = new URL(tab.url);
     console.log(`url - ${url}`);
     // Enables the side panel on google.com
+    // перенести в контентные скрипты? chrome://extensions/?id=njdoecgpmbdeojihjopjenmahejihgmj
     if (url.origin.includes(roll20Origin) || url.origin.includes(devOrigin)) {
       await chrome.sidePanel.setOptions({
         tabId,

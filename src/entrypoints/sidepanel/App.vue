@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import HelloWorld from '@/src/components/HelloWorld.vue';
+import HelloWorld from '@/components/HelloWorld.vue';
 import { sendMsgToChat } from '@/utils/sendMsgToChat';
 
 
@@ -23,7 +23,7 @@ const testClick = () => {
   </div> -->
   <div>
     <div>
-      <button @click="testClick">test2</button>
+      <button @click="testClick">test3</button>
     </div>
   </div>
 </template>

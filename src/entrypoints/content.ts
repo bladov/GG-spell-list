@@ -4,6 +4,6 @@ export default defineContentScript({
   // matches: ['*://*.wxt.dev/*'],
   matches: ["*://*/*"],
   main(ctx) {
-    console.log('ctx test', ctx);
+    console.log('here3');
   },
 });
