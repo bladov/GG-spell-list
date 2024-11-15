@@ -11,6 +11,7 @@ declare module 'vue' {
     CharacterListMenu: typeof import('./src/components/character-list/CharacterListMenu.vue')['default']
     CharacterSettings: typeof import('./src/components/character-settings/CharacterSettings.vue')['default']
     Dialog: typeof import('primevue/dialog')['default']
+    DialogAddCharacter: typeof import('./src/components/character-list/DialogAddCharacter.vue')['default']
     DialogAddFolder: typeof import('./src/components/character-list/DialogAddFolder.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     InputText: typeof import('primevue/inputtext')['default']
