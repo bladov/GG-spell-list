@@ -1,11 +1,15 @@
 import { defineConfig } from 'wxt';
 
 // See https://wxt.dev/api/config.html
+import vue from '@vitejs/plugin-vue'
+import Components from 'unplugin-vue-components/vite';
+import { PrimeVueResolver } from '@primevue/auto-import-resolver';
+
 export default defineConfig({
   extensionApi: 'chrome',
   modules: ['@wxt-dev/module-vue'],
   manifest: {
-    name: 'GG spell list',
+    name: 'Лист заклинаний для GG',
     description: 'Лист заклинаний для GG',
     permissions: ['storage', 'tabs', "scripting", "activeTab", "sidePanel", "storage"],
     // background: {
@@ -32,4 +36,14 @@ export default defineConfig({
   },
   outDir: '/Users/bladov/GG-spell-list/dist',
   srcDir: 'src',
+  vite: () => ({
+    // Override config here, same as `defineConfig({ ... })`
+    // inside vite.config.ts files
+    plugins: [
+      Components({
+        resolvers: [
+          PrimeVueResolver()
+        ]
+      })]
+  }),
 });
