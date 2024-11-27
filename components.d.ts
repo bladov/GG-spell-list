@@ -7,6 +7,7 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    Badge: typeof import('primevue/badge')['default']
     Button: typeof import('primevue/button')['default']
     CharacterListMenu: typeof import('./src/components/character-list/CharacterListMenu.vue')['default']
     CharacterSettings: typeof import('./src/components/character-settings/CharacterSettings.vue')['default']
@@ -27,5 +28,8 @@ declare module 'vue' {
     TabPanels: typeof import('primevue/tabpanels')['default']
     Tabs: typeof import('primevue/tabs')['default']
     Toast: typeof import('primevue/toast')['default']
+  }
+  export interface ComponentCustomProperties {
+    Ripple: typeof import('primevue/ripple')['default']
   }
 }

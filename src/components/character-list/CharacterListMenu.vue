@@ -3,7 +3,6 @@
         <div class="wrapper">
             <div class="card">
                 <div class="mb-5" :style="{ position: 'relative', height: '50px' }">
-
                     <SpeedDial :model="optionsAdd" direction="left"
                         :style="{ position: 'absolute', right: 0, bottom: 0 }"
                         :buttonProps="{ severity: 'success', rounded: true }"
@@ -18,12 +17,29 @@
                                 @click="toggleCallback" />
                         </template>
                     </SpeedDial>
-                    <Toast />
                 </div>
             </div>
         </div>
 
-        <PanelMenu :model="items" class="w-full md:w-80" />
+        <PanelMenu :model="items" class="w-full md:w-80">
+            <template #item="{ item }">
+                <div class="flex items-center px-4 py-2 cursor-pointer group">
+                    <Button icon="pi pi-home" aria-label="Save" />
+                    <div>
+                        <span :class="['ml-2', { 'font-semibold': item.items }]">{{ item.label }}23</span>
+                    </div>
+                </div>
+                <a v-ripple class="flex items-center px-4 py-2 cursor-pointer group">
+                    <span :class="[item.icon, 'text-primary group-hover:text-inherit']" />
+                    <span :class="['ml-2', { 'font-semibold': item.items }]">{{ item.label }}</span>
+                    <Badge v-if="item.badge" class="ml-auto" :value="item.badge" />
+                    <span v-if="item.shortcut"
+                        class="ml-auto border border-surface rounded bg-emphasis text-muted-color text-xs p-1">
+                        {{ item.shortcut }}
+                    </span>
+                </a>
+            </template>
+        </PanelMenu>
         <!-- <template #item="{ item }">
                 <div class="flex items-center px-4 py-2 cursor-pointer group">
                     <span :class="['ml-2', { 'font-semibold': item.isCurrentCharacter }]">
@@ -86,7 +102,10 @@ const items = ref([
         items: [
             {
                 label: 'Documents',
-                key: '1'
+                key: '1',
+                command: () => {
+                    console.log(2);
+                }
             },
             {
                 label: 'test2',

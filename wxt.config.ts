@@ -8,6 +8,9 @@ import { PrimeVueResolver } from '@primevue/auto-import-resolver';
 export default defineConfig({
   extensionApi: 'chrome',
   modules: ['@wxt-dev/module-vue'],
+  runner: {
+    openConsole: true
+  },
   manifest: {
     name: 'Лист заклинаний для GG',
     description: 'Лист заклинаний для GG',
