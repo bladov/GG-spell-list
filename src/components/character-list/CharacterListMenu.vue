@@ -26,7 +26,7 @@
                 <div class="flex items-center px-4 py-2 cursor-pointer group">
                     <Button icon="pi pi-home" aria-label="Save" />
                     <div>
-                        <span :class="['ml-2', { 'font-semibold': item.items }]">{{ item.label }}23</span>
+                        <span :class="['ml-2', { 'font-semibold': item.items }]">{{ item.label }}32</span>
                     </div>
                 </div>
                 <a v-ripple class="flex items-center px-4 py-2 cursor-pointer group">
@@ -61,6 +61,7 @@
 <script setup lang="ts">
 import DialogAddFolder from '@/components/character-list/DialogAddFolder.vue'
 import DialogAddCharacter from '@/components/character-list/DialogAddCharacter.vue'
+import { consoleLogToActivePage } from '@/utils/consoleLogToActivePage';
 
 const dialogRemoveFolderIsOpen = ref(false)
 const dialogRemoveCharacterIsOpen = ref(false)
@@ -104,7 +105,7 @@ const items = ref([
                 label: 'Documents',
                 key: '1',
                 command: () => {
-                    console.log(2);
+                    consoleLogToActivePage('here123')
                 }
             },
             {

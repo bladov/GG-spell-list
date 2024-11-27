@@ -18,7 +18,6 @@ declare module 'vue' {
     InputText: typeof import('primevue/inputtext')['default']
     MacrosPanel: typeof import('./src/components/magic-list/MacrosPanel.vue')['default']
     MainTabs: typeof import('./src/components/main-page/MainTabs.vue')['default']
-    Panel: typeof import('primevue/panel')['default']
     PanelMenu: typeof import('primevue/panelmenu')['default']
     Select: typeof import('primevue/select')['default']
     SpeedDial: typeof import('primevue/speeddial')['default']
@@ -27,7 +26,6 @@ declare module 'vue' {
     TabPanel: typeof import('primevue/tabpanel')['default']
     TabPanels: typeof import('primevue/tabpanels')['default']
     Tabs: typeof import('primevue/tabs')['default']
-    Toast: typeof import('primevue/toast')['default']
   }
   export interface ComponentCustomProperties {
     Ripple: typeof import('primevue/ripple')['default']

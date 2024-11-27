@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import 'primeicons/primeicons.css'
 import MainTabs from '@/components/main-page/MainTabs.vue';
+
 </script>
 
 <template>

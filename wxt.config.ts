@@ -1,7 +1,6 @@
 import { defineConfig } from 'wxt';
 
 // See https://wxt.dev/api/config.html
-import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite';
 import { PrimeVueResolver } from '@primevue/auto-import-resolver';
 
@@ -9,7 +8,14 @@ export default defineConfig({
   extensionApi: 'chrome',
   modules: ['@wxt-dev/module-vue'],
   runner: {
-    openConsole: true
+    openConsole: true,
+    startUrls: ['https://roll20.net/']
+  },
+  dev: {
+    server: {
+      hostname: 'localhost',
+      port: 3010,
+    }
   },
   manifest: {
     name: 'Лист заклинаний для GG',
