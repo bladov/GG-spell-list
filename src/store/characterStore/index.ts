@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { Character } from './type';
+import { Character, CharacterFolders } from './type';
 import { v4 as uuidv4 } from 'uuid';
 
 
@@ -11,18 +11,19 @@ export const useCharacterStore = defineStore('character', () => {
   const currentCharacter = storage.defineItem<Character | null>(
     'local:currentCharacter',
     {
-      fallback: {
-        name: 'Персонаж-1',
-        id: uuidv4(),
-        folderId: uuidv4(),
-      },
+      fallback: null,
     },
   );
 
-  const test = 2
+  const characterFolders = storage.defineItem<CharacterFolders[]>(
+    'local:currentCharacter',
+    {
+      fallback: [],
+    },
+  );
 
   return {
-    test,
-    currentCharacter
+    currentCharacter,
+    characterFolders
   }
 })
