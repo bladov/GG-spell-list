@@ -16,7 +16,7 @@ function execScript(tab: any, msg: string) {
     )
 }
 
-export const consoleLogToActivePage = (msg: string) => {
+export const logToActivePage = (msg: string) => {
     chrome.tabs.query({ active: true }, function (tabs) {
         const tab = tabs[0];
         // и если она есть, то выполнить на ней скрипт

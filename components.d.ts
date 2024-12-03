@@ -11,6 +11,7 @@ declare module 'vue' {
     Button: typeof import('primevue/button')['default']
     CharacterListMenu: typeof import('./src/components/character-list/CharacterListMenu.vue')['default']
     CharacterSettings: typeof import('./src/components/character-settings/CharacterSettings.vue')['default']
+    Checkbox: typeof import('primevue/checkbox')['default']
     Dialog: typeof import('primevue/dialog')['default']
     DialogAddCharacter: typeof import('./src/components/character-list/DialogAddCharacter.vue')['default']
     DialogAddFolder: typeof import('./src/components/character-list/DialogAddFolder.vue')['default']
