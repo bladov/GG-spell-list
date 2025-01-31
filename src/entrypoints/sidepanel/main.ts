@@ -1,9 +1,9 @@
+import '@/assets/index.css'
 import Aura from '@primevue/themes/aura'
 import { createPinia } from 'pinia'
 import PrimeVue from 'primevue/config'
 import { createApp } from 'vue'
 import App from './App.vue'
-import '@/assets/index.css'
 
 import './style.css'
 
@@ -16,4 +16,18 @@ app.use(PrimeVue, {
     preset: Aura,
   },
 })
+app.config.errorHandler = (err, vm, info) => {
+  logToActivePage(`
+    "Error:", ${err}
+    ------------------------------
+    "Vue component:", ${vm}
+    ------------------------------
+    "Additional info:", ${info}
+  `)
+};
+
 app.mount('#app')
+
+window.addEventListener("error", (event) => {
+  logToActivePage(event.message)
+});

@@ -1,5 +1,6 @@
 function sendMsg(msg: string) {
   console.log('===========================')
+  console.log(typeof msg)
   console.log(msg)
   console.log('==========================')
 }

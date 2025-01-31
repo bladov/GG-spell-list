@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import DialogAddCharacter from '@/components/character-list/DialogAddCharacter.vue'
 import DialogAddFolder from '@/components/character-list/DialogAddFolder.vue'
-import { logToActivePage } from '@/utils/consoleLogToActivePage'
 
 const dialogRemoveFolderIsOpen = ref(false)
 const dialogRemoveCharacterIsOpen = ref(false)
@@ -69,6 +68,7 @@ const items = ref([
     ],
   },
 ])
+
 </script>
 
 <template>
@@ -76,17 +76,13 @@ const items = ref([
     <div class="wrapper">
       <div class="card">
         <div class="mb-5" :style="{ position: 'relative', height: '50px' }">
-          <SpeedDial
-            :model="optionsAdd" direction="left" :style="{ position: 'absolute', right: 0, bottom: 0 }"
+          <SpeedDial :model="optionsAdd" direction="left" :style="{ position: 'absolute', right: 0, bottom: 0 }"
             :button-props="{ severity: 'success', rounded: true }"
-            :tooltip-options="{ position: 'bottom', event: 'hover' }"
-          />
+            :tooltip-options="{ position: 'bottom', event: 'hover' }" />
 
-          <SpeedDial
-            :model="optionsRemove" direction="right" :style="{ position: 'absolute', left: 0, bottom: 0 }"
+          <SpeedDial :model="optionsRemove" direction="right" :style="{ position: 'absolute', left: 0, bottom: 0 }"
             :button-props="{ severity: 'danger', rounded: true }"
-            :tooltip-options="{ position: 'bottom', event: 'hover' }"
-          >
+            :tooltip-options="{ position: 'bottom', event: 'hover' }">
             <template #button="{ toggleCallback }">
               <Button severity="danger" outlined icon="pi pi-trash" class="border" @click="toggleCallback" />
             </template>
@@ -120,15 +116,11 @@ const items = ref([
             </template> -->
 
     <div class="card flex justify-center">
-      <DialogAddFolder
-        :is-open="dialogAddFolderIsOpen" @add-folder="addFolder"
-        @close-dialog="dialogAddFolderIsOpen = false"
-      />
+      <DialogAddFolder :is-open="dialogAddFolderIsOpen" @add-folder="addFolder"
+        @close-dialog="dialogAddFolderIsOpen = false" />
 
-      <DialogAddCharacter
-        :is-open="dialogAddCharacterIsOpen" @add-character="2"
-        @close-dialog="dialogAddCharacterIsOpen = false"
-      />
+      <DialogAddCharacter :is-open="dialogAddCharacterIsOpen" @add-character="2"
+        @close-dialog="dialogAddCharacterIsOpen = false" />
     </div>
   </div>
 </template>
