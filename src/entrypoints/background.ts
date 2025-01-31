@@ -1,30 +1,32 @@
 export default defineBackground(() => {
-  console.log('Hello background!', { id: browser.runtime.id });
+  console.log('Hello background!', { id: browser.runtime.id })
   chrome.sidePanel
     .setPanelBehavior({ openPanelOnActionClick: true })
-    .catch((error) => console.error(error))
+    .catch(error => console.error(error))
 
-  const roll20Origin = 'roll20';
-  const devOrigin = 'about:blank';
+  const roll20Origin = 'roll20'
+  const devOrigin = 'about:blank'
 
   chrome.tabs.onUpdated.addListener(async (tabId, info, tab) => {
-    if (!tab.url) return;
-    const url = new URL(tab.url);
-    console.log(`url - ${url}`);
+    if (!tab.url)
+      return
+    const url = new URL(tab.url)
+    console.log(`url - ${url}`)
     // Enables the side panel on google.com
     // перенести в контентные скрипты? chrome://extensions/?id=njdoecgpmbdeojihjopjenmahejihgmj
     if (url.origin.includes(roll20Origin) || url.origin.includes(devOrigin)) {
       await chrome.sidePanel.setOptions({
         tabId,
         path: 'sidepanel.html',
-        enabled: true
-      });
-    } else {
+        enabled: true,
+      })
+    }
+    else {
       // Disables the side panel on all other sites
       await chrome.sidePanel.setOptions({
         tabId,
-        enabled: false
-      });
+        enabled: false,
+      })
     }
-  });
-});
+  })
+})

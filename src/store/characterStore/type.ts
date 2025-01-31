@@ -1,11 +1,11 @@
 export interface Character {
-    id: string
-    folderId: string
-    name: string
+  id: string
+  folderId: string
+  name: string
 }
 
 export interface CharacterFolders {
-    id: string
-    name: string
-    items: Character[]
+  id: string
+  name: string
+  items: Character[]
 }
