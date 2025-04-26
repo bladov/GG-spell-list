@@ -3,24 +3,19 @@ declare global {
 	 *~ existing declarations in the global namespace
 	 */
 
-	type Tradition = "Тьма" | "Теургия" | "Стихии" | "Свет" | "Природа" | "Мистика" | "Аркана"
-	type SpellType = "Воплощение" | "Магическая Защита" | "Испытание (Решимость)" | "Испытание (Стойкость)" | "Испытание (Воля)" | "Испытание (Рефлекс)" | "Атака Лучом" | "Магическая Атака" | "Воплощение или Испытание (Стойкость)"
-	type Pronunciation = "Кубик Магии" | "Бонусное Действие" | "Реакция, в ответ на получение урона" | "1 минута";
-	type SpellRange = "Личная" | "Касание" | "Малая (6 клеток)" | "Средняя (12 клеток)" | "Дальняя (24 клетки)" | "Большая (24 клетки)" | "Неограниченно" | "12 миль";
-	type SpellDuration = "Сцена/Ритуал" | "Сцена/Простой" | "Сцена" | "Сцена/Ритуал или 1 Кубик Действия" | "Пока не снято" | "1 День" | "1 минута" | "1 час" | "до конца раунда";
-	type SpellSquare = "Квадрат 2x2" | "Радиус 4 клетки" | "Радиус 6 клеток" | "Конус 4 клетки" | "Радиус 2 Клетки"
+	type Tradition = "Тьма" | "Теургия" | "Стихии" | "Свет" | "Природа" | "Мистика" | "Аркана" | "Хаос"
 
 	interface SpellInfo {
 		"name": string
-		"circle": 1 | 2 | 3,
+		"circle": 1 | 2 | 3 | 4,
 		"traditions": Traditions,
-		"type": SpellType,
-		"pronunciation": Pronunciation,
-		"range": SpellRange,
+		"type": string,
+		"pronunciation": string,
+		"range": string,
 		"effect": string,
 		"critical_effect": string
-		"duration"?: SpellDuration,
-		"square"?: SpellSquare
+		"duration"?: string,
+		"square"?: string
 	}
 }
 
