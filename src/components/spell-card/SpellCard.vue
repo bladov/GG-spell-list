@@ -17,15 +17,17 @@ const cubeOptions = ref<CubeOptions[]>([
     { name: '1d14', code: '14' }
 ]);
 
-const mod = ref('')
-const stars = ref('')
-const level = ref('')
-const attribute = ref('')
+const spellModInfo = reactive({
+    mod: '',
+    stars: '',
+    level: '',
+    attribute: '',
+})
 
 const diceMod = computed(() => {
-    const levelMod = Math.floor(Number(level.value) / 2)
+    const levelMod = Math.floor(Number(spellModInfo.level) / 2)
 
-    const num = Number(mod.value) + Number(stars.value) + Number(attribute.value) + levelMod
+    const num = Number(spellModInfo.mod) + Number(spellModInfo.stars) + Number(spellModInfo.attribute) + levelMod
 
     return num.toString()
 })
@@ -77,7 +79,7 @@ const castSpell = (spell: SpellInfo, cube: Cube, diceBonus: string) => {
                     placeholder="Выберите куб" />
                 <div>
                     <FloatLabel variant="on">
-                        <InputText type="text" size="small" v-model="mod" id="on_label" />
+                        <InputText type="text" size="small" v-model="spellModInfo.mod" id="on_label" />
                         <label for="on_label">модификатор</label>
                     </FloatLabel>
                 </div>
@@ -85,16 +87,16 @@ const castSpell = (spell: SpellInfo, cube: Cube, diceBonus: string) => {
 
             <div class="inputWrapper">
                 <FloatLabel variant="on">
-                    <InputText type="text" size="small" v-model="stars" id="on_label2" />
+                    <InputText type="text" size="small" v-model="spellModInfo.stars" id="on_label2" />
                     <label for="on_label2">Звезды</label>
                 </FloatLabel>
                 <FloatLabel variant="on">
-                    <InputText type="text" size="small" v-model="level" id="on_label3" />
+                    <InputText type="text" size="small" v-model="spellModInfo.level" id="on_label3" />
                     <label for="on_label3">Уровень</label>
                 </FloatLabel>
 
                 <FloatLabel variant="on">
-                    <InputText type="text" size="small" v-model="attribute" id="on_label4" />
+                    <InputText type="text" size="small" v-model="spellModInfo.attribute" id="on_label4" />
                     <label for="on_label4">Стат</label>
                 </FloatLabel>
             </div>

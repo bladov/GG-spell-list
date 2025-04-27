@@ -6,6 +6,7 @@ declare global {
 	type Tradition = "Тьма" | "Теургия" | "Стихии" | "Свет" | "Природа" | "Мистика" | "Аркана" | "Хаос"
 
 	interface SpellInfo {
+		id: number,
 		"name": string
 		"circle": 1 | 2 | 3 | 4,
 		"traditions": Traditions,
@@ -19,6 +20,8 @@ declare global {
 	}
 
 	type Cube = '12' | '14' | '16' | '20' | '24' | '30'
+
+	type SpellList = Record<Tradition, SpellInfo[]>
 }
 
 export { };

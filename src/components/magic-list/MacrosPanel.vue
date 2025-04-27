@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { useCharacterStore } from '@/store/characterStore/index'
-import { darkSpells } from '@/utils/spellList'
+import { spellList } from '@/utils/spellList'
 
 const characterStore = useCharacterStore()
+
+
 
 const spells = ref([
   {
@@ -16,10 +18,10 @@ const spells = ref([
 <template>
   <div>
     <Accordion value="0">
-      <AccordionPanel v-for="spellInfo in spells" :key="spellInfo.id" :value="spellInfo.id">
-        <AccordionHeader class="schoolTitle">{{ spellInfo.title }}</AccordionHeader>
+      <AccordionPanel v-for="(spells, schoolType) in spellList" :key="schoolType" :value="schoolType">
+        <AccordionHeader class="schoolTitle">{{ schoolType }}</AccordionHeader>
         <AccordionContent>
-          <SpellCard v-for="spell in spellInfo.spellList" :key="spell.name" :spellInfo='spell' />
+          <SpellCard v-for="spell in spells" :key="spell.name" :spellInfo='spell' />
         </AccordionContent>
       </AccordionPanel>
     </Accordion>
@@ -29,15 +31,14 @@ const spells = ref([
 <style scoped>
 .schoolTitle {
   font-size: 24px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .spellCard {
   font-size: 16px;
   margin-bottom: 30px;
-
-  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-   */
-
   border-left: 1px solid white;
   border-top: 1px solid white;
   box-shadow: rgba(15, 214, 82, 0.4) 5px 5px, rgba(15, 214, 82, 0.3) 10px 10px, rgba(15, 214, 82, 0.2) 15px 15px, rgba(15, 214, 82, 0.1) 20px 20px, rgba(15, 214, 82, 0.05) 25px 25px;

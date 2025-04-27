@@ -8,7 +8,7 @@
 //  type SpellDuration = "Сцена/Ритуал" | "Сцена/Простой" | "Сцена" | "Сцена/Ритуал или 1 Кубик Действия" | "Пока не снято" | "1 День" | "1 минута"
 //  type SpellSquare = "Квадрат 2x2" | "Радиус 4 клетки" | "Радиус 6 клеток" | "Конус 4 клетки"
 
-//  interface SpellInfo {
+//  i
 //   "name": string
 //   "circle": 1 | 2 | 3,
 //   "traditions": Traditions,
@@ -30,9 +30,19 @@
 
 // вот сам список заклинаний, из которого надо сделать массив
 
+const generateSpellId = () => {
+  let id = 1
+
+  return () => id++
+}
+
+const spellId = generateSpellId()
+
+
 export const darkSpells: SpellInfo[] = [
 
   {
+    id: spellId(),
     name: "Зомбиподобность",
     circle: 1,
     traditions: "Тьма",
@@ -44,6 +54,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена/Ритуал",
   },
   {
+    id: spellId(),
     name: "Темновидение",
     circle: 1,
     traditions: "Тьма",
@@ -55,6 +66,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена/Ритуал",
   },
   {
+    id: spellId(),
     name: "Маскировка",
     circle: 1,
     traditions: "Тьма",
@@ -66,6 +78,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена/Ритуал",
   },
   {
+    id: spellId(),
     name: "Защита от Нежити",
     circle: 1,
     traditions: "Тьма",
@@ -77,6 +90,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена",
   },
   {
+    id: spellId(),
     name: "Перенос Боли",
     circle: 1,
     traditions: "Тьма",
@@ -88,6 +102,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена",
   },
   {
+    id: spellId(),
     name: "Отложенные Раны",
     circle: 1,
     traditions: "Тьма",
@@ -99,6 +114,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена",
   },
   {
+    id: spellId(),
     name: "Испуг",
     circle: 1,
     traditions: "Тьма",
@@ -109,6 +125,7 @@ export const darkSpells: SpellInfo[] = [
     critical_effect: "Цель ухудшает все свои Кубики Атаки, Кубики Магии и Кубики Умения на одну категорию до конца следующего раунда",
   },
   {
+    id: spellId(),
     name: "Высасывание жизни",
     circle: 1,
     traditions: "Тьма",
@@ -120,6 +137,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена",
   },
   {
+    id: spellId(),
     name: "Заражающее Касание",
     circle: 1,
     traditions: "Тьма",
@@ -131,6 +149,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена",
   },
   {
+    id: spellId(),
     name: "Нанесение Малых Ран",
     circle: 1,
     traditions: "Тьма",
@@ -141,6 +160,7 @@ export const darkSpells: SpellInfo[] = [
     critical_effect: "Урон или лечение увеличиваются на [[1d12]]",
   },
   {
+    id: spellId(),
     name: "Злой Рок",
     circle: 1,
     traditions: "Тьма",
@@ -152,6 +172,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена",
   },
   {
+    id: spellId(),
     name: "Старый Червяк",
     circle: 1,
     traditions: "Тьма",
@@ -163,6 +184,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Пока не снято",
   },
   {
+    id: spellId(),
     name: "Кровавый Дротик",
     circle: 1,
     traditions: "Тьма",
@@ -173,6 +195,7 @@ export const darkSpells: SpellInfo[] = [
     critical_effect: "Колющий урон увеличивается на [[1d10+2]]",
   },
   {
+    id: spellId(),
     name: "Могильный Холод",
     circle: 1,
     traditions: "Тьма",
@@ -183,6 +206,7 @@ export const darkSpells: SpellInfo[] = [
     critical_effect: "Урон холодом увеличивается на [[2d6]]",
   },
   {
+    id: spellId(),
     name: "Луч Слабости",
     circle: 1,
     traditions: "Тьма",
@@ -193,6 +217,7 @@ export const darkSpells: SpellInfo[] = [
     critical_effect: "Урон в Силу увеличивается на 2",
   },
   {
+    id: spellId(),
     name: "Теневая Игла",
     circle: 1,
     traditions: "Тьма",
@@ -203,6 +228,7 @@ export const darkSpells: SpellInfo[] = [
     critical_effect: "Колющий урон увеличен на [[1d10]]",
   },
   {
+    id: spellId(),
     name: "Слепота/Глухота",
     circle: 1,
     traditions: "Тьма",
@@ -214,6 +240,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена",
   },
   {
+    id: spellId(),
     name: "Гнилая Еда",
     circle: 1,
     traditions: "Тьма",
@@ -226,6 +253,7 @@ export const darkSpells: SpellInfo[] = [
     square: "Радиус 6 клеток",
   },
   {
+    id: spellId(),
     name: "Анимированный Боец",
     circle: 1,
     traditions: "Тьма",
@@ -237,6 +265,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена",
   },
   {
+    id: spellId(),
     name: "Не-Свет",
     circle: 1,
     traditions: "Тьма",
@@ -249,6 +278,7 @@ export const darkSpells: SpellInfo[] = [
     square: "Радиус 6 клеток",
   },
   {
+    id: spellId(),
     name: "Спектральная Рука",
     circle: 1,
     traditions: "Тьма",
@@ -260,6 +290,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена",
   },
   {
+    id: spellId(),
     name: "Гадание на Прахе",
     circle: 1,
     traditions: "Тьма",
@@ -270,6 +301,7 @@ export const darkSpells: SpellInfo[] = [
     critical_effect: "Шанс на правдивую информацию увеличен до 70%",
   },
   {
+    id: spellId(),
     name: "Пагубная Защита",
     circle: 2,
     traditions: "Тьма",
@@ -281,6 +313,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     name: "Отвратительное Обжорство",
     circle: 2,
     traditions: "Тьма",
@@ -292,6 +325,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     name: "Темный Охотник",
     circle: 2,
     traditions: "Тьма",
@@ -303,6 +337,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     name: "Трупная Личинка",
     circle: 2,
     traditions: "Тьма",
@@ -314,6 +349,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Пока не снято"
   },
   {
+    id: spellId(),
     name: "Проклятье Мягкости",
     circle: 2,
     traditions: "Тьма",
@@ -325,6 +361,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Касание Упыря",
     circle: 2,
     traditions: "Тьма",
@@ -335,6 +372,7 @@ export const darkSpells: SpellInfo[] = [
     critical_effect: "Цель начинает источать отвратительную трупную отраву, и оно и все существа в 1 клетке от него, кроме вас, получают 2 урона в Телосложение"
   },
   {
+    id: spellId(),
     name: "Летающая Челюсть",
     circle: 2,
     traditions: "Тьма",
@@ -345,6 +383,7 @@ export const darkSpells: SpellInfo[] = [
     critical_effect: "Некротический урон увеличен на [[2d6]]"
   },
   {
+    id: spellId(),
     name: "Конус Костей",
     circle: 2,
     traditions: "Тьма",
@@ -356,6 +395,7 @@ export const darkSpells: SpellInfo[] = [
     square: "Конус 4 клетки"
   },
   {
+    id: spellId(),
     name: "Всплеск Яда",
     circle: 2,
     traditions: "Тьма",
@@ -367,6 +407,7 @@ export const darkSpells: SpellInfo[] = [
     square: "Радиус 2 Клетки"
   },
   {
+    id: spellId(),
     name: "Гнилые Глаза",
     circle: 2,
     traditions: "Тьма",
@@ -377,6 +418,7 @@ export const darkSpells: SpellInfo[] = [
     critical_effect: "Существо также Полностью Ослеплено до конца следующего раунда"
   },
   {
+    id: spellId(),
     name: "Малое Иссушение",
     circle: 2,
     traditions: "Тьма",
@@ -387,6 +429,7 @@ export const darkSpells: SpellInfo[] = [
     critical_effect: "Существо получает 2 Негативных Уровня вместо одного"
   },
   {
+    id: spellId(),
     name: "Примерзание",
     circle: 2,
     traditions: "Тьма",
@@ -399,6 +442,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Забрать Жизнь",
     circle: 1,
     traditions: "Тьма",
@@ -410,6 +454,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Ужас",
     circle: 2,
     traditions: "Тьма",
@@ -421,6 +466,7 @@ export const darkSpells: SpellInfo[] = [
     square: "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     name: "Тьма",
     circle: 2,
     traditions: "Тьма",
@@ -433,6 +479,7 @@ export const darkSpells: SpellInfo[] = [
     square: "Радиус 6 клеток"
   },
   {
+    id: spellId(),
     name: "Глаза Зомби",
     circle: 2,
     traditions: "Тьма",
@@ -444,6 +491,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Командование Нежитью",
     circle: 2,
     traditions: "Тьма",
@@ -455,6 +503,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена/Ритуал или 1 Кубик Действия"
   },
   {
+    id: spellId(),
     name: "Призыв Нежити I",
     circle: 2,
     traditions: "Тьма",
@@ -466,6 +515,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Клинок Крови",
     circle: 2,
     traditions: "Тьма",
@@ -477,6 +527,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Пушечное Мясо",
     circle: 2,
     traditions: "Тьма",
@@ -488,6 +539,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Проклятая Область",
     circle: 2,
     traditions: "Тьма",
@@ -500,6 +552,7 @@ export const darkSpells: SpellInfo[] = [
     square: "Радиус 6 клеток"
   },
   {
+    id: spellId(),
     name: "Найти Могилу",
     circle: 3,
     traditions: "Тьма",
@@ -511,6 +564,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Пожирающее Развеивание",
     circle: 3,
     traditions: "Тьма",
@@ -521,6 +575,7 @@ export const darkSpells: SpellInfo[] = [
     critical_effect: "Урон Некротикой увеличен на [[1d8]].",
   },
   {
+    id: spellId(),
     name: "Форма Дыма",
     circle: 3,
     traditions: "Тьма",
@@ -532,6 +587,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена/Простой",
   },
   {
+    id: spellId(),
     name: "Глаза Дьявола",
     circle: 3,
     traditions: "Тьма",
@@ -543,6 +599,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена/Ритуал",
   },
   {
+    id: spellId(),
     name: "Мертвецкая Стойкость",
     circle: 3,
     traditions: "Тьма",
@@ -554,6 +611,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена/Простой",
   },
   {
+    id: spellId(),
     name: "Анимировать Труп",
     circle: 3,
     traditions: "Тьма",
@@ -565,6 +623,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена/Ритуал",
   },
   {
+    id: spellId(),
     name: "Остановить Нежить",
     circle: 3,
     traditions: "Тьма",
@@ -576,6 +635,7 @@ export const darkSpells: SpellInfo[] = [
     square: "Радиус 6 клеток",
   },
   {
+    id: spellId(),
     name: "Наслать Проклятие",
     circle: 3,
     traditions: "Тьма",
@@ -587,6 +647,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Пока не снято",
   },
   {
+    id: spellId(),
     name: "Уродство",
     circle: 3,
     traditions: "Тьма",
@@ -597,6 +658,7 @@ export const darkSpells: SpellInfo[] = [
     critical_effect: "Урон в Харизму увеличен на [[1d6]] (все ещё не может опустить Харизму ниже 1).",
   },
   {
+    id: spellId(),
     name: "Голодная Тьма",
     circle: 3,
     traditions: "Тьма",
@@ -609,6 +671,7 @@ export const darkSpells: SpellInfo[] = [
     square: "Радиус 6 клеток",
   },
   {
+    id: spellId(),
     name: "Тошнотворное Облако",
     circle: 3,
     traditions: "Тьма",
@@ -621,6 +684,7 @@ export const darkSpells: SpellInfo[] = [
     square: "Радиус 4 клетки",
   },
   {
+    id: spellId(),
     name: "Иссушающий Луч",
     circle: 3,
     traditions: "Тьма",
@@ -631,6 +695,7 @@ export const darkSpells: SpellInfo[] = [
     critical_effect: "Урон в Силу, Ловкость и Телосложение увеличен на [[1d4]], и ещё +1 к каждому, если в существе есть Трупная Личинка.",
   },
   {
+    id: spellId(),
     name: "Черная Звезда Леи",
     circle: 3,
     traditions: "Тьма",
@@ -641,6 +706,7 @@ export const darkSpells: SpellInfo[] = [
     critical_effect: "Некротический урон увеличен на [[2d8]].",
   },
   {
+    id: spellId(),
     name: "Касание Вампира",
     circle: 3,
     traditions: "Тьма",
@@ -652,6 +718,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена",
   },
   {
+    id: spellId(),
     name: "Нанесение Средних Ран",
     circle: 3,
     traditions: "Тьма",
@@ -662,6 +729,7 @@ export const darkSpells: SpellInfo[] = [
     critical_effect: "Урон или лечение увеличиваются на [[2d12]].",
   },
   {
+    id: spellId(),
     name: "Взрывной Череп",
     circle: 3,
     traditions: "Тьма",
@@ -673,6 +741,7 @@ export const darkSpells: SpellInfo[] = [
     square: "Радиус 4 клетки",
   },
   {
+    id: spellId(),
     name: "Ядовитое Дыхание",
     circle: 3,
     traditions: "Тьма",
@@ -684,6 +753,7 @@ export const darkSpells: SpellInfo[] = [
     square: "Конус 4 клетки",
   },
   {
+    id: spellId(),
     name: "Дикое Обморожение",
     circle: 3,
     traditions: "Тьма",
@@ -694,6 +764,7 @@ export const darkSpells: SpellInfo[] = [
     critical_effect: "Изначальный урон Холодом, как и Паралич, увеличен на [[1d6]].",
   },
   {
+    id: spellId(),
     name: "Черный Язык",
     circle: 3,
     traditions: "Тьма",
@@ -705,6 +776,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Пока не снято",
   },
   {
+    id: spellId(),
     name: "Призыв Нежити II",
     circle: 3,
     traditions: "Тьма",
@@ -716,6 +788,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена",
   },
   {
+    id: spellId(),
     name: "Нежить-Брут",
     circle: 3,
     traditions: "Тьма",
@@ -727,6 +800,7 @@ export const darkSpells: SpellInfo[] = [
     duration: "Сцена",
   },
   {
+    id: spellId(),
     name: "Малое Жертвоприношение",
     circle: 3,
     traditions: "Тьма",
@@ -737,6 +811,7 @@ export const darkSpells: SpellInfo[] = [
     critical_effect: "Лечение усиливается на [[2d12]].",
   },
   {
+    id: spellId(),
     name: "Кровопускание",
     circle: 3,
     traditions: "Тьма",
@@ -750,6 +825,7 @@ export const darkSpells: SpellInfo[] = [
 
 export const theurgySpells: SpellInfo[] = [
   {
+    id: spellId(),
     name: "Защита от Воздействия",
     circle: 1,
     traditions: "Теургия",
@@ -761,6 +837,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Защита от Нежити",
     circle: 1,
     traditions: "Теургия",
@@ -772,6 +849,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Святилище",
     circle: 1,
     traditions: "Теургия",
@@ -783,6 +861,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Щит Энтропии",
     circle: 1,
     traditions: "Теургия",
@@ -794,6 +873,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Броня Веры",
     circle: 1,
     traditions: "Теургия",
@@ -805,6 +885,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "до конца раунда"
   },
   {
+    id: spellId(),
     name: "Понимание Языков",
     circle: 1,
     traditions: "Теургия",
@@ -816,6 +897,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     name: "Эзотерическая Медицина",
     circle: 1,
     traditions: "Теургия",
@@ -827,6 +909,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     name: "Малое Безумие",
     circle: 1,
     traditions: "Теургия",
@@ -837,6 +920,7 @@ export const theurgySpells: SpellInfo[] = [
     critical_effect: "Длительность Безумия увеличена до 2 Кубиков Действия"
   },
   {
+    id: spellId(),
     name: "Немота",
     circle: 1,
     traditions: "Теургия",
@@ -848,6 +932,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "до конца раунда"
   },
   {
+    id: spellId(),
     name: "Испуг",
     circle: 1,
     traditions: "Теургия",
@@ -858,6 +943,7 @@ export const theurgySpells: SpellInfo[] = [
     critical_effect: "Цель ухудшает все свои Кубики Атаки, Кубики Магии и Кубики Умения на одну категорию до конца следующего раунда"
   },
   {
+    id: spellId(),
     name: "Злой Рок",
     circle: 1,
     traditions: "Теургия",
@@ -869,6 +955,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Благословение",
     circle: 1,
     traditions: "Теургия",
@@ -880,6 +967,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Лечение Лёгких Ран",
     circle: 1,
     traditions: "Теургия",
@@ -890,6 +978,7 @@ export const theurgySpells: SpellInfo[] = [
     critical_effect: "Восстановление Очков Здоровья увеличено на [[1d8]]"
   },
   {
+    id: spellId(),
     name: "Снять Состояние",
     circle: 1,
     traditions: "Теургия",
@@ -900,6 +989,7 @@ export const theurgySpells: SpellInfo[] = [
     critical_effect: "Вы снимаете с цели ещё одно состояние из списка выше"
   },
   {
+    id: spellId(),
     name: "Кара Грешных",
     circle: 1,
     traditions: "Теургия",
@@ -911,6 +1001,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Изгнать Страх",
     circle: 1,
     traditions: "Теургия",
@@ -921,6 +1012,7 @@ export const theurgySpells: SpellInfo[] = [
     critical_effect: "Восстановление Морали увеличено до 15"
   },
   {
+    id: spellId(),
     name: "Благословить Оружие",
     circle: 1,
     traditions: "Теургия",
@@ -932,6 +1024,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Волшебные Камни",
     circle: 1,
     traditions: "Теургия",
@@ -943,6 +1036,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Дружба",
     circle: 1,
     traditions: "Теургия",
@@ -954,6 +1048,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "до конца раунда"
   },
   {
+    id: spellId(),
     name: "Найти Храм",
     circle: 1,
     traditions: "Теургия",
@@ -964,6 +1059,7 @@ export const theurgySpells: SpellInfo[] = [
     critical_effect: "Нет"
   },
   {
+    id: spellId(),
     name: "Живое Письмо",
     circle: 1,
     traditions: "Теургия",
@@ -975,6 +1071,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "1 час"
   },
   {
+    id: spellId(),
     name: "Божественная Правда",
     circle: 1,
     traditions: "Теургия",
@@ -985,6 +1082,7 @@ export const theurgySpells: SpellInfo[] = [
     critical_effect: "Нет"
   },
   {
+    id: spellId(),
     name: "Защита от Яда",
     circle: 2,
     traditions: "Теургия",
@@ -996,6 +1094,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     name: "Помощь",
     circle: 2,
     traditions: "Теургия",
@@ -1007,6 +1106,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     name: "Усилить Характеристику",
     circle: 2,
     traditions: "Теургия",
@@ -1018,6 +1118,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     name: "Видеть Невидимое",
     circle: 2,
     traditions: "Теургия",
@@ -1029,6 +1130,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     name: "Броня Веры",
     circle: 2,
     traditions: "Теургия",
@@ -1040,6 +1142,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Паралич",
     circle: 2,
     traditions: "Теургия",
@@ -1050,6 +1153,7 @@ export const theurgySpells: SpellInfo[] = [
     critical_effect: "Изначальный Психический урон, как и Паралич, увеличен на [[1d6]]"
   },
   {
+    id: spellId(),
     name: "Тишина",
     circle: 2,
     traditions: "Теургия",
@@ -1062,6 +1166,7 @@ export const theurgySpells: SpellInfo[] = [
     square: "Радиус 6 клеток"
   },
   {
+    id: spellId(),
     name: "Ужас",
     circle: 2,
     traditions: "Теургия",
@@ -1073,6 +1178,7 @@ export const theurgySpells: SpellInfo[] = [
     square: "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     name: "Приказ",
     circle: 2,
     traditions: "Теургия",
@@ -1083,6 +1189,7 @@ export const theurgySpells: SpellInfo[] = [
     critical_effect: "Нет"
   },
   {
+    id: spellId(),
     name: "Очарование",
     circle: 2,
     traditions: "Теургия",
@@ -1094,6 +1201,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "1 День"
   },
   {
+    id: spellId(),
     name: "Клинок Веры",
     circle: 2,
     traditions: "Теургия",
@@ -1105,6 +1213,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Кара Неверующих",
     circle: 2,
     traditions: "Теургия",
@@ -1116,6 +1225,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Малый Героизм",
     circle: 2,
     traditions: "Теургия",
@@ -1128,6 +1238,7 @@ export const theurgySpells: SpellInfo[] = [
     square: "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     name: "Лечение Средних Ран",
     circle: 2,
     traditions: "Теургия",
@@ -1138,6 +1249,7 @@ export const theurgySpells: SpellInfo[] = [
     critical_effect: "Восстановление Очков Здоровья увеличено на [[1d8]]"
   },
   {
+    id: spellId(),
     name: "Молитва Исцеления",
     circle: 2,
     traditions: "Теургия",
@@ -1148,6 +1260,7 @@ export const theurgySpells: SpellInfo[] = [
     critical_effect: "Восстановление Очков Здоровья увеличено на [[1d6]]"
   },
   {
+    id: spellId(),
     name: "Песнь",
     circle: 2,
     traditions: "Теургия",
@@ -1159,6 +1272,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Успокоить Эмоции",
     circle: 2,
     traditions: "Теургия",
@@ -1171,6 +1285,7 @@ export const theurgySpells: SpellInfo[] = [
     square: "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     name: "Сила Быка",
     circle: 2,
     traditions: "Теургия",
@@ -1182,6 +1297,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Медвежья Выносливость",
     circle: 2,
     traditions: "Теургия",
@@ -1193,6 +1309,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Грация Кошки",
     circle: 2,
     traditions: "Теургия",
@@ -1204,6 +1321,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Хитрость Лисицы",
     circle: 2,
     traditions: "Теургия",
@@ -1215,6 +1333,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Мудрость Совы",
     circle: 2,
     traditions: "Теургия",
@@ -1226,6 +1345,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Величие Орла",
     circle: 2,
     traditions: "Теургия",
@@ -1237,6 +1357,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Чтение Мыслей",
     circle: 2,
     traditions: "Теургия",
@@ -1247,6 +1368,7 @@ export const theurgySpells: SpellInfo[] = [
     critical_effect: "Нет",
   },
   {
+    id: spellId(),
     name: "Колокольчик Истины",
     circle: 2,
     traditions: "Теургия",
@@ -1258,6 +1380,7 @@ export const theurgySpells: SpellInfo[] = [
     square: "Радиус 2 Клетки"
   },
   {
+    id: spellId(),
     name: "Развеивание Магии",
     circle: 3,
     traditions: "Теургия",
@@ -1269,6 +1392,7 @@ export const theurgySpells: SpellInfo[] = [
     square: "Радиус 6 клеток"
   },
   {
+    id: spellId(),
     name: "Круг Защиты от Воздействия",
     circle: 3,
     traditions: "Теургия",
@@ -1280,6 +1404,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Защита от Элементов",
     circle: 3,
     traditions: "Теургия",
@@ -1291,6 +1416,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     name: "Защита Дыхания",
     circle: 3,
     traditions: "Теургия",
@@ -1302,6 +1428,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     name: "Магическое Облачение",
     circle: 3,
     traditions: "Теургия",
@@ -1313,6 +1440,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     name: "Сила Единого",
     circle: 3,
     traditions: "Теургия",
@@ -1324,6 +1452,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     name: "Призыв Святой Мощи",
     circle: 3,
     traditions: "Теургия",
@@ -1335,6 +1464,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     name: "Мантия Любви",
     circle: 3,
     traditions: "Теургия",
@@ -1346,6 +1476,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Огонь Веры",
     circle: 3,
     traditions: "Теургия",
@@ -1356,6 +1487,7 @@ export const theurgySpells: SpellInfo[] = [
     critical_effect: "Урон Огнём увеличен на [[1d6]]"
   },
   {
+    id: spellId(),
     name: "Ограничение",
     circle: 3,
     traditions: "Теургия",
@@ -1367,6 +1499,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Неверная Магия",
     circle: 3,
     traditions: "Теургия",
@@ -1377,6 +1510,7 @@ export const theurgySpells: SpellInfo[] = [
     critical_effect: "Помимо этого, цель снижает все Кубики Магии на одну категорию"
   },
   {
+    id: spellId(),
     name: "Лишение Сил",
     circle: 3,
     traditions: "Теургия",
@@ -1387,6 +1521,7 @@ export const theurgySpells: SpellInfo[] = [
     critical_effect: "Урон в Силу увеличен на [[1d6]]"
   },
   {
+    id: spellId(),
     name: "Безумие",
     circle: 3,
     traditions: "Теургия",
@@ -1397,6 +1532,7 @@ export const theurgySpells: SpellInfo[] = [
     critical_effect: "Длительность Безумия увеличена до 4 Кубиков Действия"
   },
   {
+    id: spellId(),
     name: "Принуждение",
     circle: 3,
     traditions: "Теургия",
@@ -1408,6 +1544,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Дознание",
     circle: 3,
     traditions: "Теургия",
@@ -1418,6 +1555,7 @@ export const theurgySpells: SpellInfo[] = [
     critical_effect: "Нет"
   },
   {
+    id: spellId(),
     name: "Кара Богохульных",
     circle: 3,
     traditions: "Теургия",
@@ -1429,6 +1567,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "Сцена"
   },
   {
+    id: spellId(),
     name: "Лечение Тяжелых Ран",
     circle: 3,
     traditions: "Теургия",
@@ -1439,6 +1578,7 @@ export const theurgySpells: SpellInfo[] = [
     critical_effect: "Восстановление Очков Здоровья увеличено на [[1d8]]"
   },
   {
+    id: spellId(),
     name: "Указывающая Рука",
     circle: 3,
     traditions: "Теургия",
@@ -1450,6 +1590,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "1 День"
   },
   {
+    id: spellId(),
     name: "Послание",
     circle: 3,
     traditions: "Теургия",
@@ -1460,6 +1601,7 @@ export const theurgySpells: SpellInfo[] = [
     critical_effect: "Нет"
   },
   {
+    id: spellId(),
     name: "Разговор с Мёртвыми",
     circle: 3,
     traditions: "Теургия",
@@ -1471,6 +1613,7 @@ export const theurgySpells: SpellInfo[] = [
     duration: "1 минута"
   },
   {
+    id: spellId(),
     name: "Хождение по Воде",
     circle: 3,
     traditions: "Теургия",
@@ -1485,6 +1628,7 @@ export const theurgySpells: SpellInfo[] = [
 
 export const arcaneSpells: SpellInfo[] = [
   {
+    id: spellId(),
     "name": "Защита от Воздействия",
     "circle": 1,
     "traditions": "Аркана",
@@ -1496,6 +1640,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Защита от Окаменения",
     "circle": 1,
     "traditions": "Аркана",
@@ -1507,6 +1652,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Щит",
     "circle": 1,
     "traditions": "Аркана",
@@ -1518,6 +1664,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Доспех Мага",
     "circle": 1,
     "traditions": "Аркана",
@@ -1529,6 +1676,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Понимание Языков",
     "circle": 1,
     "traditions": "Аркана",
@@ -1540,6 +1688,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Маскировка",
     "circle": 1,
     "traditions": "Аркана",
@@ -1551,6 +1700,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Глубокие Карманы",
     "circle": 1,
     "traditions": "Аркана",
@@ -1562,6 +1712,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Кролик",
     "circle": 1,
     "traditions": "Аркана",
@@ -1573,6 +1724,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Темновидение",
     "circle": 1,
     "traditions": "Аркана",
@@ -1584,6 +1736,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Шепчущий Ветер",
     "circle": 1,
     "traditions": "Аркана",
@@ -1594,6 +1747,7 @@ export const arcaneSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Истинный Удар",
     "circle": 1,
     "traditions": "Аркана",
@@ -1604,6 +1758,7 @@ export const arcaneSpells: SpellInfo[] = [
     "critical_effect": "При попадании Кубиком Атаки или Кубиком Магии (Атака Лучом), улучшенным этим заклинанием, вы наносите дополнительно 1d12 урона Чистой Магией"
   },
   {
+    id: spellId(),
     "name": "Хитрость Густаво",
     "circle": 1,
     "traditions": "Аркана",
@@ -1615,6 +1770,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Шестеренка",
     "circle": 1,
     "traditions": "Аркана",
@@ -1626,6 +1782,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена или пока не прервано"
   },
   {
+    id: spellId(),
     "name": "Гоблинская Коробка",
     "circle": 1,
     "traditions": "Аркана",
@@ -1637,6 +1794,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена или пока не прервано"
   },
   {
+    id: spellId(),
     "name": "Обжигающий Луч",
     "circle": 1,
     "traditions": "Аркана",
@@ -1647,6 +1805,7 @@ export const arcaneSpells: SpellInfo[] = [
     "critical_effect": "Урон огнём увеличен на [[1d10]], и цель поджигается на значение 5"
   },
   {
+    id: spellId(),
     "name": "Искры Дрюкина",
     "circle": 1,
     "traditions": "Аркана",
@@ -1657,6 +1816,7 @@ export const arcaneSpells: SpellInfo[] = [
     "critical_effect": "Урон электричеством увеличен на [[1d12]], а порог Ошеломления до 15"
   },
   {
+    id: spellId(),
     "name": "Волшебная Стрела",
     "circle": 1,
     "traditions": "Аркана",
@@ -1667,6 +1827,7 @@ export const arcaneSpells: SpellInfo[] = [
     "critical_effect": "Вы создаете один дополнительный дротик"
   },
   {
+    id: spellId(),
     "name": "Скольжение",
     "circle": 1,
     "traditions": "Аркана",
@@ -1679,6 +1840,7 @@ export const arcaneSpells: SpellInfo[] = [
     "square": "Квадрат 2x2"
   },
   {
+    id: spellId(),
     "name": "Огненные Ладони",
     "circle": 1,
     "traditions": "Аркана",
@@ -1690,6 +1852,7 @@ export const arcaneSpells: SpellInfo[] = [
     "square": "Конус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Ледяной Клинок",
     "circle": 1,
     "traditions": "Аркана",
@@ -1701,6 +1864,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Горячая Голова",
     "circle": 1,
     "traditions": "Аркана",
@@ -1711,6 +1875,7 @@ export const arcaneSpells: SpellInfo[] = [
     "critical_effect": "Урон огнём увеличен на [[1d10]], как первичный, так и от взрыва"
   },
   {
+    id: spellId(),
     "name": "Слепота/Глухота",
     "circle": 1,
     "traditions": "Аркана",
@@ -1722,6 +1887,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Гармоничный Поток",
     "circle": 1,
     "traditions": "Аркана",
@@ -1732,6 +1898,7 @@ export const arcaneSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Снятие Магии",
     "circle": 2,
     "traditions": "Аркана",
@@ -1742,6 +1909,7 @@ export const arcaneSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Двойники",
     "circle": 3,
     "traditions": "Аркана",
@@ -1753,6 +1921,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Перстень",
     "circle": 2,
     "traditions": "Аркана",
@@ -1764,6 +1933,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена/Раунд"
   },
   {
+    id: spellId(),
     "name": "Усилить Характеристику",
     "circle": 2,
     "traditions": "Аркана",
@@ -1775,6 +1945,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Видеть Невидимое",
     "circle": 2,
     "traditions": "Аркана",
@@ -1786,6 +1957,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Невидимость",
     "circle": 2,
     "traditions": "Аркана",
@@ -1797,6 +1969,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Вокализация",
     "circle": 2,
     "traditions": "Аркана",
@@ -1808,6 +1981,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Малый Алхимический Круг",
     "circle": 2,
     "traditions": "Аркана",
@@ -1819,6 +1993,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Сила Быка",
     "circle": 2,
     "traditions": "Аркана",
@@ -1830,6 +2005,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Медвежья Выносливость",
     "circle": 2,
     "traditions": "Аркана",
@@ -1841,6 +2017,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Грация Кошки",
     "circle": 2,
     "traditions": "Аркана",
@@ -1852,6 +2029,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Луч Слабости",
     "circle": 2,
     "traditions": "Аркана",
@@ -1863,6 +2041,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Летающий Кулак",
     "circle": 2,
     "traditions": "Аркана",
@@ -1873,6 +2052,7 @@ export const arcaneSpells: SpellInfo[] = [
     "critical_effect": "Урон увеличен на 2d6, и вы можете оттолкнуть цель ещё на 1 клетку"
   },
   {
+    id: spellId(),
     "name": "Кислотная Стрела",
     "circle": 2,
     "traditions": "Аркана",
@@ -1883,6 +2063,7 @@ export const arcaneSpells: SpellInfo[] = [
     "critical_effect": "Урон по первичной цели увеличен на 2d4+2, и она Ослепляется до конца Сцены"
   },
   {
+    id: spellId(),
     "name": "Яркая Пыль",
     "circle": 2,
     "traditions": "Аркана",
@@ -1895,6 +2076,7 @@ export const arcaneSpells: SpellInfo[] = [
     "square": "Радиус в 2 клетки"
   },
   {
+    id: spellId(),
     "name": "Цветная Сфера",
     "circle": 2,
     "traditions": "Аркана",
@@ -1905,6 +2087,7 @@ export const arcaneSpells: SpellInfo[] = [
     "critical_effect": "Существо начинает медленно обращаться в камень. Оно Замедлено, и в конце следующего раунда станет Окаменелым, превратившись в камень. До этого момент любой эффект, снимающий окаменение, заканчивает эффект. Защита от Окаменения и Гармоничный Поток также отменяют эффект"
   },
   {
+    id: spellId(),
     "name": "Взгляд Волшебника",
     "circle": 2,
     "traditions": "Аркана",
@@ -1915,6 +2098,7 @@ export const arcaneSpells: SpellInfo[] = [
     "critical_effect": "Урон Чистой Магией увеличивается на 2d6+5 (что также усиливает Паралич)"
   },
   {
+    id: spellId(),
     "name": "Дребезги",
     "circle": 2,
     "traditions": "Аркана",
@@ -1926,6 +2110,7 @@ export const arcaneSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Драгоценная Бомба",
     "circle": 2,
     "traditions": "Аркана",
@@ -1937,6 +2122,7 @@ export const arcaneSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Огненная Сфера",
     "circle": 2,
     "traditions": "Аркана",
@@ -1948,6 +2134,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Холодная Хватка",
     "circle": 2,
     "traditions": "Аркана",
@@ -1958,6 +2145,7 @@ export const arcaneSpells: SpellInfo[] = [
     "critical_effect": "Первичный урон холодом увеличен до 6d6"
   },
   {
+    id: spellId(),
     "name": "Призыв Монстра I",
     "circle": 2,
     "traditions": "Аркана",
@@ -1969,6 +2157,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Паутина",
     "circle": 2,
     "traditions": "Аркана",
@@ -1981,6 +2170,7 @@ export const arcaneSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Прыжок",
     "circle": 2,
     "traditions": "Аркана",
@@ -1991,6 +2181,7 @@ export const arcaneSpells: SpellInfo[] = [
     "critical_effect": "Дальность увеличена до Большой (24 клетки)"
   },
   {
+    id: spellId(),
     "name": "Развеивание Магии",
     "circle": 3,
     "traditions": "Аркана",
@@ -2002,6 +2193,7 @@ export const arcaneSpells: SpellInfo[] = [
     "square": "Радиус 6 клеток"
   },
   {
+    id: spellId(),
     "name": "Круг Защиты от Воздействия",
     "circle": 3,
     "traditions": "Аркана",
@@ -2013,6 +2205,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Защита от Обычных Снарядов",
     "circle": 3,
     "traditions": "Аркана",
@@ -2024,6 +2217,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Смещение",
     "circle": 3,
     "traditions": "Аркана",
@@ -2035,6 +2229,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Защита от Элементов",
     "circle": 3,
     "traditions": "Аркана",
@@ -2046,6 +2241,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Сфера Невидимости",
     "circle": 3,
     "traditions": "Аркана",
@@ -2057,6 +2253,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Отвод Глаз",
     "circle": 3,
     "traditions": "Аркана",
@@ -2068,6 +2265,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Зрение Арканы",
     "circle": 3,
     "traditions": "Аркана",
@@ -2079,6 +2277,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Ускорение",
     "circle": 3,
     "traditions": "Аркана",
@@ -2090,6 +2289,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Замедление",
     "circle": 3,
     "traditions": "Аркана",
@@ -2102,6 +2302,7 @@ export const arcaneSpells: SpellInfo[] = [
     "square": "Радиус 6 клеток"
   },
   {
+    id: spellId(),
     "name": "Синий Луч",
     "circle": 3,
     "traditions": "Аркана",
@@ -2113,6 +2314,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Печать",
     "circle": 3,
     "traditions": "Аркана",
@@ -2125,6 +2327,7 @@ export const arcaneSpells: SpellInfo[] = [
     "square": "Радиус 2 клетки"
   },
   {
+    id: spellId(),
     "name": "Грозная Метель",
     "circle": 3,
     "traditions": "Аркана",
@@ -2137,6 +2340,7 @@ export const arcaneSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Тошнотворное Облако",
     "circle": 3,
     "traditions": "Аркана",
@@ -2149,6 +2353,7 @@ export const arcaneSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Кислотное Лицо",
     "circle": 3,
     "traditions": "Аркана",
@@ -2161,6 +2366,7 @@ export const arcaneSpells: SpellInfo[] = [
     "square": "Квадрат 12x12"
   },
   {
+    id: spellId(),
     "name": "Огненный Шар",
     "circle": 3,
     "traditions": "Аркана",
@@ -2172,6 +2378,7 @@ export const arcaneSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Молния",
     "circle": 3,
     "traditions": "Аркана",
@@ -2182,6 +2389,7 @@ export const arcaneSpells: SpellInfo[] = [
     "critical_effect": "Урон электричеством увеличен на 2d6"
   },
   {
+    id: spellId(),
     "name": "Веер Кинжалов",
     "circle": 3,
     "traditions": "Аркана",
@@ -2193,6 +2401,7 @@ export const arcaneSpells: SpellInfo[] = [
     "square": "Радиус 2 клетки"
   },
   {
+    id: spellId(),
     "name": "Облако Неудачника",
     "circle": 3,
     "traditions": "Аркана",
@@ -2204,6 +2413,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Призыв Монстра II",
     "circle": 3,
     "traditions": "Аркана",
@@ -2215,6 +2425,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Глиняная Тыква",
     "circle": 3,
     "traditions": "Аркана",
@@ -2227,6 +2438,7 @@ export const arcaneSpells: SpellInfo[] = [
     "square": "Куб на выбор - 1x1x1, 2x2x2, 3x3x3 или 4x4x4"
   },
   {
+    id: spellId(),
     "name": "Огненные Дротики",
     "circle": 3,
     "traditions": "Аркана",
@@ -2238,6 +2450,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Подслушать/Подсмотреть",
     "circle": 3,
     "traditions": "Аркана",
@@ -2250,6 +2463,7 @@ export const arcaneSpells: SpellInfo[] = [
     "square": "Радиус 12 клеток"
   },
   {
+    id: spellId(),
     "name": "Шаг Грома",
     "circle": 3,
     "traditions": "Аркана",
@@ -2260,6 +2474,7 @@ export const arcaneSpells: SpellInfo[] = [
     "critical_effect": "Дополнительно 1d12 урона звуком, и одна цель на выбор Ошеломляется"
   },
   {
+    id: spellId(),
     "name": "Полёт",
     "circle": 3,
     "traditions": "Аркана",
@@ -2271,6 +2486,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Оракул",
     "circle": 3,
     "traditions": "Аркана",
@@ -2283,6 +2499,7 @@ export const arcaneSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Защита от Звука",
     "circle": 3,
     "traditions": "Аркана",
@@ -2294,6 +2511,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Притворится Мёртвым",
     "circle": 3,
     "traditions": "Аркана",
@@ -2305,6 +2523,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Шок и Трепет",
     "circle": 3,
     "traditions": "Аркана",
@@ -2316,6 +2535,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Допельгангер",
     "circle": 3,
     "traditions": "Аркана",
@@ -2327,6 +2547,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Смещение",
     "circle": 3,
     "traditions": "Аркана",
@@ -2338,6 +2559,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Зрение Арканы",
     "circle": 3,
     "traditions": "Аркана",
@@ -2349,6 +2571,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Яд Разума",
     "circle": 3,
     "traditions": "Аркана",
@@ -2359,6 +2582,7 @@ export const arcaneSpells: SpellInfo[] = [
     "critical_effect": "Цель также немедленно получает [[3d6]] Психического урона"
   },
   {
+    id: spellId(),
     "name": "Легкая Мишень",
     "circle": 3,
     "traditions": "Аркана",
@@ -2369,6 +2593,7 @@ export const arcaneSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Конус Отчаяния",
     "circle": 3,
     "traditions": "Аркана",
@@ -2380,6 +2605,7 @@ export const arcaneSpells: SpellInfo[] = [
     "square": "Конус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Химера",
     "circle": 3,
     "traditions": "Аркана",
@@ -2391,6 +2617,7 @@ export const arcaneSpells: SpellInfo[] = [
     "square": "Конус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Гипнотический Узор",
     "circle": 3,
     "traditions": "Аркана",
@@ -2403,6 +2630,7 @@ export const arcaneSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Безумие",
     "circle": 3,
     "traditions": "Аркана",
@@ -2413,6 +2641,7 @@ export const arcaneSpells: SpellInfo[] = [
     "critical_effect": "Длительность Безумия увеличена до 4 Кубиков Действия"
   },
   {
+    id: spellId(),
     "name": "Принуждение",
     "circle": 3,
     "traditions": "Аркана",
@@ -2424,6 +2653,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Слово: Сон",
     "circle": 3,
     "traditions": "Аркана",
@@ -2435,6 +2665,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "8 часов"
   },
   {
+    id: spellId(),
     "name": "Ход Конем",
     "circle": 3,
     "traditions": "Аркана",
@@ -2445,6 +2676,7 @@ export const arcaneSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Шпион",
     "circle": 3,
     "traditions": "Аркана",
@@ -2456,6 +2688,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Подслушать/Подсмотреть",
     "circle": 3,
     "traditions": "Аркана",
@@ -2468,6 +2701,7 @@ export const arcaneSpells: SpellInfo[] = [
     "square": "Радиус 12 клеток"
   },
   {
+    id: spellId(),
     "name": "Сфера Невидимости",
     "circle": 3,
     "traditions": "Аркана",
@@ -2479,6 +2713,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Иллюзия",
     "circle": 3,
     "traditions": "Аркана",
@@ -2491,6 +2726,7 @@ export const arcaneSpells: SpellInfo[] = [
     "square": "Куб 4x4x4"
   },
   {
+    id: spellId(),
     "name": "Тристаль",
     "circle": 3,
     "traditions": "Аркана",
@@ -2501,6 +2737,7 @@ export const arcaneSpells: SpellInfo[] = [
     "critical_effect": "Кубики Атаки от этого заклинания увеличены с 1d16 до 1d20"
   },
   {
+    id: spellId(),
     "name": "Прыжок Серебра",
     "circle": 3,
     "traditions": "Аркана",
@@ -2512,6 +2749,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Теневой Клон",
     "circle": 3,
     "traditions": "Аркана",
@@ -2523,6 +2761,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Компетентность",
     "circle": 3,
     "traditions": "Аркана",
@@ -2534,6 +2773,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "до конца раунда"
   },
   {
+    id: spellId(),
     "name": "Дух Гармонии",
     "circle": 3,
     "traditions": "Аркана",
@@ -2545,6 +2785,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Оракул",
     "circle": 3,
     "traditions": "Аркана",
@@ -2557,6 +2798,7 @@ export const arcaneSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Остановка",
     "circle": 3,
     "traditions": "Аркана",
@@ -2567,6 +2809,7 @@ export const arcaneSpells: SpellInfo[] = [
     "critical_effect": "Существо также получает [[4d4]] Психического урона"
   },
   {
+    id: spellId(),
     "name": "Секретное Слово",
     "circle": 4,
     "traditions": "Аркана",
@@ -2577,6 +2820,7 @@ export const arcaneSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Поглощение Магии",
     "circle": 4,
     "traditions": "Аркана",
@@ -2588,6 +2832,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Каменная Кожа",
     "circle": 4,
     "traditions": "Аркана",
@@ -2599,6 +2844,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Малая Сфера Неуязвимости",
     "circle": 4,
     "traditions": "Аркана",
@@ -2610,6 +2856,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Защита от Обычного Оружия",
     "circle": 4,
     "traditions": "Аркана",
@@ -2621,6 +2868,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Огненный Щит",
     "circle": 4,
     "traditions": "Аркана",
@@ -2632,6 +2880,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Планарный Якорь",
     "circle": 4,
     "traditions": "Аркана",
@@ -2643,6 +2892,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "24 часа"
   },
   {
+    id: spellId(),
     "name": "Гадкий Луч",
     "circle": 4,
     "traditions": "Аркана",
@@ -2653,6 +2903,7 @@ export const arcaneSpells: SpellInfo[] = [
     "critical_effect": "Урон Кислотой увеличен на 4d6, а урон в Силу и Ловкость на 2"
   },
   {
+    id: spellId(),
     "name": "Силовой Всплеск",
     "circle": 4,
     "traditions": "Аркана",
@@ -2664,6 +2915,7 @@ export const arcaneSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Ледяной Шторм",
     "circle": 4,
     "traditions": "Аркана",
@@ -2676,6 +2928,7 @@ export const arcaneSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Молния Власти",
     "circle": 4,
     "traditions": "Аркана",
@@ -2686,6 +2939,7 @@ export const arcaneSpells: SpellInfo[] = [
     "critical_effect": "Урон Электричеством увеличивается на 3d6 (что также усиливает Паралич)"
   },
   {
+    id: spellId(),
     "name": "Черные Тентакли",
     "circle": 4,
     "traditions": "Аркана",
@@ -2698,6 +2952,7 @@ export const arcaneSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Град Волшебных Стрел",
     "circle": 4,
     "traditions": "Аркана",
@@ -2709,6 +2964,7 @@ export const arcaneSpells: SpellInfo[] = [
     "square": "Радиус 12 клеток"
   },
   {
+    id: spellId(),
     "name": "Дверь Измерений",
     "circle": 4,
     "traditions": "Аркана",
@@ -2719,6 +2975,7 @@ export const arcaneSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Мощь Хоккума",
     "circle": 4,
     "traditions": "Аркана",
@@ -2730,6 +2987,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Парад Светил",
     "circle": 4,
     "traditions": "Аркана",
@@ -2741,6 +2999,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Улучшенная Невидимость",
     "circle": 4,
     "traditions": "Аркана",
@@ -2752,6 +3011,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Призыв Монстра III",
     "circle": 4,
     "traditions": "Аркана",
@@ -2763,6 +3023,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Малое Превращение",
     "circle": 4,
     "traditions": "Аркана",
@@ -2774,6 +3035,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Малая Последовательность",
     "circle": 4,
     "traditions": "Аркана",
@@ -2784,6 +3046,7 @@ export const arcaneSpells: SpellInfo[] = [
     "critical_effect": "Оба получаемых Кубика Магии улучшаются до 1d24"
   },
   {
+    id: spellId(),
     "name": "Волшебный Глаз",
     "circle": 4,
     "traditions": "Аркана",
@@ -2795,6 +3058,7 @@ export const arcaneSpells: SpellInfo[] = [
     "duration": "8 часов"
   },
   {
+    id: spellId(),
     "name": "Универсальный Поиск",
     "circle": 4,
     "traditions": "Аркана",
@@ -2805,6 +3069,7 @@ export const arcaneSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Колесница Снов",
     "circle": 4,
     "traditions": "Аркана",
@@ -2818,6 +3083,7 @@ export const arcaneSpells: SpellInfo[] = [
 
 export const lightSpells: SpellInfo[] = [
   {
+    id: spellId(),
     "name": "Малые Стихийные Узы",
     "circle": 1,
     "traditions": "Свет",
@@ -2829,6 +3095,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Стихийный Щит",
     "circle": 1,
     "traditions": "Свет",
@@ -2840,6 +3107,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Стихийное Оружие",
     "circle": 1,
     "traditions": "Свет",
@@ -2851,6 +3119,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Земной Доспех",
     "circle": 1,
     "traditions": "Свет",
@@ -2862,6 +3131,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Бросок Камня",
     "circle": 1,
     "traditions": "Свет",
@@ -2872,6 +3142,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Урон увеличен на [[1d10]]"
   },
   {
+    id: spellId(),
     "name": "Яма",
     "circle": 1,
     "traditions": "Свет",
@@ -2884,6 +3155,7 @@ export const lightSpells: SpellInfo[] = [
     "square": "Куб 1x1x1"
   },
   {
+    id: spellId(),
     "name": "Врасти в Землю",
     "circle": 1,
     "traditions": "Свет",
@@ -2895,6 +3167,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Чувство Дрожи",
     "circle": 1,
     "traditions": "Свет",
@@ -2906,6 +3179,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Каменный Кулак",
     "circle": 1,
     "traditions": "Свет",
@@ -2917,6 +3191,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Пламенная Ловушка",
     "circle": 1,
     "traditions": "Свет",
@@ -2928,6 +3203,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Двойной Огонь",
     "circle": 1,
     "traditions": "Свет",
@@ -2938,6 +3214,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Урон Огнём по обоим увеличен на [[3d6]]"
   },
   {
+    id: spellId(),
     "name": "Выжигатель",
     "circle": 1,
     "traditions": "Свет",
@@ -2948,6 +3225,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Урон Огнём увеличен на [[2d6]]"
   },
   {
+    id: spellId(),
     "name": "Горячая Смола",
     "circle": 1,
     "traditions": "Свет",
@@ -2959,6 +3237,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Горящие Следы",
     "circle": 1,
     "traditions": "Свет",
@@ -2970,6 +3249,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Плевок Гейзера",
     "circle": 1,
     "traditions": "Свет",
@@ -2980,6 +3260,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Дробящий урон увеличен на [[2d6]], и вы можете увеличить дальность толчка до 5 или 6 клеток"
   },
   {
+    id: spellId(),
     "name": "Дыхание Йети",
     "circle": 1,
     "traditions": "Свет",
@@ -2991,6 +3272,7 @@ export const lightSpells: SpellInfo[] = [
     "square": "Конус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Скользкий Лёд",
     "circle": 1,
     "traditions": "Свет",
@@ -3003,6 +3285,7 @@ export const lightSpells: SpellInfo[] = [
     "square": "Квадрат 4x4"
   },
   {
+    id: spellId(),
     "name": "Туман",
     "circle": 1,
     "traditions": "Свет",
@@ -3015,6 +3298,7 @@ export const lightSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Мягкость Вод",
     "circle": 1,
     "traditions": "Свет",
@@ -3026,6 +3310,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Касание Молнии",
     "circle": 1,
     "traditions": "Свет",
@@ -3036,6 +3321,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Урон Электричеством увеличен на [[1d8]] и цель Ошеломлена"
   },
   {
+    id: spellId(),
     "name": "Ноги Ветра",
     "circle": 1,
     "traditions": "Свет",
@@ -3047,6 +3333,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "до конца раунда"
   },
   {
+    id: spellId(),
     "name": "Падение Пера",
     "circle": 1,
     "traditions": "Свет",
@@ -3058,6 +3345,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "до конца раунда"
   },
   {
+    id: spellId(),
     "name": "Летающие Сандали",
     "circle": 1,
     "traditions": "Свет",
@@ -3068,6 +3356,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Дальность перелёта увеличена до 12 клеток"
   },
   {
+    id: spellId(),
     "name": "Шепчущий Ветер",
     "circle": 1,
     "traditions": "Свет",
@@ -3078,6 +3367,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Призыв Элементаля I",
     "circle": 2,
     "traditions": "Свет",
@@ -3089,6 +3379,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Стихийный Глас Барина",
     "circle": 2,
     "traditions": "Свет",
@@ -3100,6 +3391,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Песчаный Доспех",
     "circle": 2,
     "traditions": "Свет",
@@ -3111,6 +3403,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Песчаный Покров",
     "circle": 2,
     "traditions": "Свет",
@@ -3122,6 +3415,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Бросок Валуна",
     "circle": 2,
     "traditions": "Свет",
@@ -3132,6 +3426,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Урон увеличен на [[1d10]]"
   },
   {
+    id: spellId(),
     "name": "Зыбучие Пески",
     "circle": 2,
     "traditions": "Свет",
@@ -3143,6 +3438,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "до 8 часов"
   },
   {
+    id: spellId(),
     "name": "Печь Абр-Абра",
     "circle": 2,
     "traditions": "Свет",
@@ -3154,6 +3450,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "1 день"
   },
   {
+    id: spellId(),
     "name": "Столб",
     "circle": 2,
     "traditions": "Свет",
@@ -3166,6 +3463,7 @@ export const lightSpells: SpellInfo[] = [
     "square": "Квадрат 2x2"
   },
   {
+    id: spellId(),
     "name": "Вспышка",
     "circle": 2,
     "traditions": "Свет",
@@ -3178,6 +3476,7 @@ export const lightSpells: SpellInfo[] = [
     "square": "Радиус 6 клеток"
   },
   {
+    id: spellId(),
     "name": "Вулканический Удар",
     "circle": 2,
     "traditions": "Свет",
@@ -3189,6 +3488,7 @@ export const lightSpells: SpellInfo[] = [
     "square": "Квадрат 2x2"
   },
   {
+    id: spellId(),
     "name": "Возгорание",
     "circle": 2,
     "traditions": "Свет",
@@ -3200,6 +3500,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Огненный Сюрикен",
     "circle": 2,
     "traditions": "Свет",
@@ -3211,6 +3512,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Пламенный Клинок",
     "circle": 2,
     "traditions": "Свет",
@@ -3222,6 +3524,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Примерзание",
     "circle": 2,
     "traditions": "Свет",
@@ -3233,6 +3536,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Кольцо Прилива",
     "circle": 2,
     "traditions": "Свет",
@@ -3244,6 +3548,7 @@ export const lightSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки вокруг вас"
   },
   {
+    id: spellId(),
     "name": "Тропический Дождь",
     "circle": 2,
     "traditions": "Свет",
@@ -3256,6 +3561,7 @@ export const lightSpells: SpellInfo[] = [
     "square": "Радиус 6 клеток"
   },
   {
+    id: spellId(),
     "name": "Луч Океана",
     "circle": 2,
     "traditions": "Свет",
@@ -3266,6 +3572,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Режущий урон увеличен на [[2d6]]"
   },
   {
+    id: spellId(),
     "name": "Жидкая Мембрана",
     "circle": 2,
     "traditions": "Свет",
@@ -3276,6 +3583,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Поглощает 12 единиц урона"
   },
   {
+    id: spellId(),
     "name": "Щит Облаков",
     "circle": 2,
     "traditions": "Свет",
@@ -3287,6 +3595,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Поток Ветра",
     "circle": 2,
     "traditions": "Свет",
@@ -3298,6 +3607,7 @@ export const lightSpells: SpellInfo[] = [
     "square": "Радиус 6 клеток"
   },
   {
+    id: spellId(),
     "name": "Громовой Наскок",
     "circle": 2,
     "traditions": "Свет",
@@ -3309,6 +3619,7 @@ export const lightSpells: SpellInfo[] = [
     "square": "Радиус 2 клетки от вас после телепортации"
   },
   {
+    id: spellId(),
     "name": "Электрическая Змея",
     "circle": 2,
     "traditions": "Свет",
@@ -3319,6 +3630,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Урон Электричеством, как и Паралич, увеличен на [[1d6]]"
   },
   {
+    id: spellId(),
     "name": "Левитация",
     "circle": 2,
     "traditions": "Свет",
@@ -3329,6 +3641,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Скорость Полёта увеличена до 8"
   },
   {
+    id: spellId(),
     "name": "Защита от Элементов",
     "circle": 3,
     "traditions": "Свет",
@@ -3340,6 +3653,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Стихийные Узы",
     "circle": 3,
     "traditions": "Свет",
@@ -3351,6 +3665,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Кузница Стихий",
     "circle": 3,
     "traditions": "Свет",
@@ -3362,6 +3677,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Призыв Элементаля II",
     "circle": 3,
     "traditions": "Свет",
@@ -3373,6 +3689,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Бросок Скалы",
     "circle": 3,
     "traditions": "Свет",
@@ -3383,6 +3700,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Урон увеличен на [[2d10]]"
   },
   {
+    id: spellId(),
     "name": "Магнит",
     "circle": 3,
     "traditions": "Свет",
@@ -3394,6 +3712,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "8 часов"
   },
   {
+    id: spellId(),
     "name": "Управление Камнем",
     "circle": 3,
     "traditions": "Свет",
@@ -3406,6 +3725,7 @@ export const lightSpells: SpellInfo[] = [
     "square": "Влияет на камень в области Куба не более 2x2x2"
   },
   {
+    id: spellId(),
     "name": "Тяжесть/Легкость",
     "circle": 3,
     "traditions": "Свет",
@@ -3417,6 +3737,7 @@ export const lightSpells: SpellInfo[] = [
     "square": "Квадрат 4x4"
   },
   {
+    id: spellId(),
     "name": "Плавание в Земле",
     "circle": 3,
     "traditions": "Свет",
@@ -3428,6 +3749,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Огненный Вихрь",
     "circle": 3,
     "traditions": "Свет",
@@ -3439,6 +3761,7 @@ export const lightSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Раскалённая Сажа",
     "circle": 3,
     "traditions": "Свет",
@@ -3449,6 +3772,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Урон Огнём, как и Тошнота увеличены на [[1d10]]. Кроме того, если суммарный урон Огнем от этого заклинания превзошел Защиту от Травм цели, её глаза временно повреждены, и она Полностью Ослеплена до конца раунда, даже если удалить сажу"
   },
   {
+    id: spellId(),
     "name": "Живой Факел",
     "circle": 3,
     "traditions": "Свет",
@@ -3459,6 +3783,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Урон Огнём, как и Поджигание увеличены на [[2d6]]"
   },
   {
+    id: spellId(),
     "name": "Пламенные Крылья",
     "circle": 3,
     "traditions": "Свет",
@@ -3470,6 +3795,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Огненные Дротики",
     "circle": 3,
     "traditions": "Свет",
@@ -3481,6 +3807,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Водная Тюрьма",
     "circle": 3,
     "traditions": "Свет",
@@ -3491,6 +3818,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Дробящий Урон, как и Паралич, увеличен на [[2d6]]. Если цель не может дышать под водой, она немедленно теряет 1 Кубик Отдыха"
   },
   {
+    id: spellId(),
     "name": "Арктическая Мгла",
     "circle": 3,
     "traditions": "Свет",
@@ -3503,6 +3831,7 @@ export const lightSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Дикое Обморожение",
     "circle": 3,
     "traditions": "Свет",
@@ -3513,6 +3842,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Изначальный урон Холодом, как и Паралич, увеличен на [[1d6]]"
   },
   {
+    id: spellId(),
     "name": "Форма Дыма",
     "circle": 3,
     "traditions": "Свет",
@@ -3524,6 +3854,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена/Простой",
   },
   {
+    id: spellId(),
     "name": "Спокойная Циркуляция",
     "circle": 3,
     "traditions": "Свет",
@@ -3534,6 +3865,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Хождение по Воде",
     "circle": 3,
     "traditions": "Свет",
@@ -3545,6 +3877,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Точный Разрез",
     "circle": 3,
     "traditions": "Свет",
@@ -3555,6 +3888,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Режущий урон увеличен на [[3d8]]"
   },
   {
+    id: spellId(),
     "name": "Электризация",
     "circle": 3,
     "traditions": "Свет",
@@ -3566,6 +3900,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Призыв Молнии",
     "circle": 3,
     "traditions": "Свет",
@@ -3576,6 +3911,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Первичный урон Электричеством увеличен на [[1d10]], повторные применения не усиливаются - но имеют шанс на подобный Критический Эффект"
   },
   {
+    id: spellId(),
     "name": "Быстрый Поток",
     "circle": 3,
     "traditions": "Свет",
@@ -3587,6 +3923,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Полёт",
     "circle": 3,
     "traditions": "Свет",
@@ -3598,6 +3935,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Призыв Элементаля III",
     "circle": 4,
     "traditions": "Свет",
@@ -3609,6 +3947,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Командование Элементалями",
     "circle": 4,
     "traditions": "Свет",
@@ -3620,6 +3959,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Каменная Кожа",
     "circle": 4,
     "traditions": "Свет",
@@ -3631,6 +3971,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Магматический Доспех",
     "circle": 4,
     "traditions": "Свет",
@@ -3642,6 +3983,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Каменные Шипы",
     "circle": 4,
     "traditions": "Свет",
@@ -3654,6 +3996,7 @@ export const lightSpells: SpellInfo[] = [
     "square": "Квадрат 6x6"
   },
   {
+    id: spellId(),
     "name": "Каменный Охотник",
     "circle": 4,
     "traditions": "Свет",
@@ -3665,6 +4008,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Огненный Щит",
     "circle": 4,
     "traditions": "Свет",
@@ -3676,6 +4020,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Всплеск Лавы",
     "circle": 4,
     "traditions": "Свет",
@@ -3686,6 +4031,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Урон Огнём увеличен на [[5d6]]"
   },
   {
+    id: spellId(),
     "name": "Огненный Дракон",
     "circle": 4,
     "traditions": "Свет",
@@ -3697,6 +4043,7 @@ export const lightSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Топор Пылкости",
     "circle": 4,
     "traditions": "Свет",
@@ -3708,6 +4055,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Ледяная Глыба",
     "circle": 4,
     "traditions": "Свет",
@@ -3718,6 +4066,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Ваше Действие Реакции не считается потраченным"
   },
   {
+    id: spellId(),
     "name": "Ледяной Шторм",
     "circle": 4,
     "traditions": "Свет",
@@ -3730,6 +4079,7 @@ export const lightSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Гейзер",
     "circle": 4,
     "traditions": "Свет",
@@ -3741,6 +4091,7 @@ export const lightSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Водяной Клон",
     "circle": 4,
     "traditions": "Свет",
@@ -3752,6 +4103,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Подавляющая Молния",
     "circle": 4,
     "traditions": "Свет",
@@ -3763,6 +4115,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "до конца раунда"
   },
   {
+    id: spellId(),
     "name": "Кинжал Розы Ветров",
     "circle": 4,
     "traditions": "Свет",
@@ -3773,6 +4126,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Режущий Урон увеличен на [[2d8]], и вы можете выбрать второй эффект из списка (нельзя выбрать один дважды)"
   },
   {
+    id: spellId(),
     "name": "Полёт над Землёй",
     "circle": 4,
     "traditions": "Свет",
@@ -3784,6 +4138,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "1 День"
   },
   {
+    id: spellId(),
     "name": "Пустой Звук",
     "circle": 4,
     "traditions": "Свет",
@@ -3795,6 +4150,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "до конца раунда"
   },
   {
+    id: spellId(),
     "name": "Свет Истины",
     "circle": 3,
     "traditions": "Свет",
@@ -3807,6 +4163,7 @@ export const lightSpells: SpellInfo[] = [
     "square": "Радиус 6 клеток"
   },
   {
+    id: spellId(),
     "name": "Лазурный Шквал Рики",
     "circle": 3,
     "traditions": "Свет",
@@ -3817,6 +4174,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "При попадании этими атаками вы наносите дополнительно [[2d4]] урона Излучением"
   },
   {
+    id: spellId(),
     "name": "Указывающая Рука",
     "circle": 3,
     "traditions": "Свет",
@@ -3828,6 +4186,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "1 День"
   },
   {
+    id: spellId(),
     "name": "Возрождение",
     "circle": 3,
     "traditions": "Свет",
@@ -3838,6 +4197,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Существо имеет 50% максимальных Очков Здоровья, 3 Очка Травмы вместо 5, и 0 Кубиков Отдыха вместо -2"
   },
   {
+    id: spellId(),
     "name": "Прорицание Послесмертия",
     "circle": 3,
     "traditions": "Свет",
@@ -3848,6 +4208,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Защита от Некротической Энергии",
     "circle": 4,
     "traditions": "Свет",
@@ -3859,6 +4220,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Защитная Гармония",
     "circle": 4,
     "traditions": "Свет",
@@ -3871,6 +4233,7 @@ export const lightSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Аура Жизни",
     "circle": 4,
     "traditions": "Свет",
@@ -3882,6 +4245,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Охрана от Смерти",
     "circle": 4,
     "traditions": "Свет",
@@ -3893,6 +4257,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Ангел-Хранитель",
     "circle": 4,
     "traditions": "Свет",
@@ -3904,6 +4269,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Копье Валькирии",
     "circle": 4,
     "traditions": "Свет",
@@ -3914,6 +4280,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Урон Излучением увеличивается на [[4d6]]"
   },
   {
+    id: spellId(),
     "name": "Штормовая Доблесть",
     "circle": 4,
     "traditions": "Свет",
@@ -3925,6 +4292,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Огненный Столб",
     "circle": 4,
     "traditions": "Свет",
@@ -3936,6 +4304,7 @@ export const lightSpells: SpellInfo[] = [
     "square": "Цилиндр радиусом 2 клетки и высотой 6 клеток"
   },
   {
+    id: spellId(),
     "name": "Ослепительный Рассвет",
     "circle": 4,
     "traditions": "Свет",
@@ -3947,6 +4316,7 @@ export const lightSpells: SpellInfo[] = [
     "square": "Квадрат 8x8"
   },
   {
+    id: spellId(),
     "name": "Святое Слово",
     "circle": 4,
     "traditions": "Свет",
@@ -3957,6 +4327,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Молитва Тысячи Голосов",
     "circle": 4,
     "traditions": "Свет",
@@ -3968,6 +4339,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Восстановление",
     "circle": 4,
     "traditions": "Свет",
@@ -3978,6 +4350,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Восстановление Очков Здоровья увеличено на [[4d8]]"
   },
   {
+    id: spellId(),
     "name": "Надежда II",
     "circle": 4,
     "traditions": "Свет",
@@ -3988,6 +4361,7 @@ export const lightSpells: SpellInfo[] = [
     "critical_effect": "Лечение увеличено на [[4d10]], как и потенциальные временные Очки Здоровья"
   },
   {
+    id: spellId(),
     "name": "Героизм",
     "circle": 4,
     "traditions": "Свет",
@@ -4000,6 +4374,7 @@ export const lightSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Цирк Солнца и Луны",
     "circle": 4,
     "traditions": "Свет",
@@ -4011,6 +4386,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Точный Монокль",
     "circle": 4,
     "traditions": "Свет",
@@ -4022,6 +4398,7 @@ export const lightSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Скорость Света",
     "circle": 4,
     "traditions": "Свет",
@@ -4035,6 +4412,7 @@ export const lightSpells: SpellInfo[] = [
 
 export const elementalSpells: SpellInfo[] = [
   {
+    id: spellId(),
     "name": "Малые Стихийные Узы",
     "circle": 1,
     "traditions": "Стихии",
@@ -4046,6 +4424,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Стихийный Щит",
     "circle": 1,
     "traditions": "Стихии",
@@ -4057,6 +4436,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Стихийное Оружие",
     "circle": 1,
     "traditions": "Стихии",
@@ -4068,6 +4448,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Земной Доспех",
     "circle": 1,
     "traditions": "Стихии",
@@ -4079,6 +4460,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Бросок Камня",
     "circle": 1,
     "traditions": "Стихии",
@@ -4089,6 +4471,7 @@ export const elementalSpells: SpellInfo[] = [
     "critical_effect": "Урон увеличен на [[1d10]]"
   },
   {
+    id: spellId(),
     "name": "Яма",
     "circle": 1,
     "traditions": "Стихии",
@@ -4101,6 +4484,7 @@ export const elementalSpells: SpellInfo[] = [
     "square": "Куб 1x1x1"
   },
   {
+    id: spellId(),
     "name": "Врасти в Землю",
     "circle": 1,
     "traditions": "Стихии",
@@ -4112,6 +4496,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Чувство Дрожи",
     "circle": 1,
     "traditions": "Стихии",
@@ -4123,6 +4508,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Каменный Кулак",
     "circle": 1,
     "traditions": "Стихии",
@@ -4134,6 +4520,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Пламенная Ловушка",
     "circle": 1,
     "traditions": "Стихии",
@@ -4145,6 +4532,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Двойной Огонь",
     "circle": 1,
     "traditions": "Стихии",
@@ -4155,6 +4543,7 @@ export const elementalSpells: SpellInfo[] = [
     "critical_effect": "Урон Огнём по обоим увеличен на [[3d6]]"
   },
   {
+    id: spellId(),
     "name": "Выжигатель",
     "circle": 1,
     "traditions": "Стихии",
@@ -4165,6 +4554,7 @@ export const elementalSpells: SpellInfo[] = [
     "critical_effect": "Урон Огнём увеличен на [[2d6]]"
   },
   {
+    id: spellId(),
     "name": "Горячая Смола",
     "circle": 1,
     "traditions": "Стихии",
@@ -4176,6 +4566,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Горящие Следы",
     "circle": 1,
     "traditions": "Стихии",
@@ -4187,6 +4578,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Плевок Гейзера",
     "circle": 1,
     "traditions": "Стихии",
@@ -4197,6 +4589,7 @@ export const elementalSpells: SpellInfo[] = [
     "critical_effect": "Дробящий урон увеличен на [[2d6]], и вы можете увеличить дальность толчка до 5 или 6 клеток"
   },
   {
+    id: spellId(),
     "name": "Дыхание Йети",
     "circle": 1,
     "traditions": "Стихии",
@@ -4208,6 +4601,7 @@ export const elementalSpells: SpellInfo[] = [
     "square": "Конус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Скользкий Лёд",
     "circle": 1,
     "traditions": "Стихии",
@@ -4220,6 +4614,7 @@ export const elementalSpells: SpellInfo[] = [
     "square": "Квадрат 4x4"
   },
   {
+    id: spellId(),
     "name": "Туман",
     "circle": 1,
     "traditions": "Стихии",
@@ -4232,6 +4627,7 @@ export const elementalSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Мягкость Вод",
     "circle": 1,
     "traditions": "Стихии",
@@ -4243,6 +4639,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Касание Молнии",
     "circle": 1,
     "traditions": "Стихии",
@@ -4253,6 +4650,7 @@ export const elementalSpells: SpellInfo[] = [
     "critical_effect": "Урон Электричеством увеличен на [[1d8]] и цель Ошеломлена"
   },
   {
+    id: spellId(),
     "name": "Ноги Ветра",
     "circle": 1,
     "traditions": "Стихии",
@@ -4264,6 +4662,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "до конца раунда"
   },
   {
+    id: spellId(),
     "name": "Падение Пера",
     "circle": 1,
     "traditions": "Стихии",
@@ -4275,6 +4674,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "до конца раунда"
   },
   {
+    id: spellId(),
     "name": "Летающие Сандали",
     "circle": 1,
     "traditions": "Стихии",
@@ -4285,6 +4685,7 @@ export const elementalSpells: SpellInfo[] = [
     "critical_effect": "Дальность перелёта увеличена до 12 клеток"
   },
   {
+    id: spellId(),
     "name": "Шепчущий Ветер",
     "circle": 1,
     "traditions": "Стихии",
@@ -4295,6 +4696,7 @@ export const elementalSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Призыв Элементаля I",
     "circle": 2,
     "traditions": "Стихии",
@@ -4306,6 +4708,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Стихийный Глас Барина",
     "circle": 2,
     "traditions": "Стихии",
@@ -4317,6 +4720,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Песчаный Доспех",
     "circle": 2,
     "traditions": "Стихии",
@@ -4328,6 +4732,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Песчаный Покров",
     "circle": 2,
     "traditions": "Стихии",
@@ -4339,6 +4744,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Бросок Валуна",
     "circle": 2,
     "traditions": "Стихии",
@@ -4349,6 +4755,7 @@ export const elementalSpells: SpellInfo[] = [
     "critical_effect": "Урон увеличен на [[1d10]]"
   },
   {
+    id: spellId(),
     "name": "Зыбучие Пески",
     "circle": 2,
     "traditions": "Стихии",
@@ -4360,6 +4767,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "до 8 часов"
   },
   {
+    id: spellId(),
     "name": "Печь Абр-Абра",
     "circle": 2,
     "traditions": "Стихии",
@@ -4371,6 +4779,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "1 день"
   },
   {
+    id: spellId(),
     "name": "Столб",
     "circle": 2,
     "traditions": "Стихии",
@@ -4383,6 +4792,7 @@ export const elementalSpells: SpellInfo[] = [
     "square": "Квадрат 2x2"
   },
   {
+    id: spellId(),
     "name": "Вспышка",
     "circle": 2,
     "traditions": "Стихии",
@@ -4395,6 +4805,7 @@ export const elementalSpells: SpellInfo[] = [
     "square": "Радиус 6 клеток"
   },
   {
+    id: spellId(),
     "name": "Вулканический Удар",
     "circle": 2,
     "traditions": "Стихии",
@@ -4406,6 +4817,7 @@ export const elementalSpells: SpellInfo[] = [
     "square": "Квадрат 2x2"
   },
   {
+    id: spellId(),
     "name": "Возгорание",
     "circle": 2,
     "traditions": "Стихии",
@@ -4417,6 +4829,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Огненный Сюрикен",
     "circle": 2,
     "traditions": "Стихии",
@@ -4428,6 +4841,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Пламенный Клинок",
     "circle": 2,
     "traditions": "Стихии",
@@ -4439,6 +4853,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Примерзание",
     "circle": 2,
     "traditions": "Стихии",
@@ -4450,6 +4865,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Кольцо Прилива",
     "circle": 2,
     "traditions": "Стихии",
@@ -4461,6 +4877,7 @@ export const elementalSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки вокруг вас"
   },
   {
+    id: spellId(),
     "name": "Тропический Дождь",
     "circle": 2,
     "traditions": "Стихии",
@@ -4473,6 +4890,7 @@ export const elementalSpells: SpellInfo[] = [
     "square": "Радиус 6 клеток"
   },
   {
+    id: spellId(),
     "name": "Луч Океана",
     "circle": 2,
     "traditions": "Стихии",
@@ -4483,6 +4901,7 @@ export const elementalSpells: SpellInfo[] = [
     "critical_effect": "Режущий урон увеличен на [[2d6]]"
   },
   {
+    id: spellId(),
     "name": "Жидкая Мембрана",
     "circle": 2,
     "traditions": "Стихии",
@@ -4493,6 +4912,7 @@ export const elementalSpells: SpellInfo[] = [
     "critical_effect": "Поглощает 12 единиц урона"
   },
   {
+    id: spellId(),
     "name": "Щит Облаков",
     "circle": 2,
     "traditions": "Стихии",
@@ -4504,6 +4924,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Поток Ветра",
     "circle": 2,
     "traditions": "Стихии",
@@ -4515,6 +4936,7 @@ export const elementalSpells: SpellInfo[] = [
     "square": "Радиус 6 клеток"
   },
   {
+    id: spellId(),
     "name": "Громовой Наскок",
     "circle": 2,
     "traditions": "Стихии",
@@ -4526,6 +4948,7 @@ export const elementalSpells: SpellInfo[] = [
     "square": "Радиус 2 клетки от вас после телепортации"
   },
   {
+    id: spellId(),
     "name": "Электрическая Змея",
     "circle": 2,
     "traditions": "Стихии",
@@ -4536,6 +4959,7 @@ export const elementalSpells: SpellInfo[] = [
     "critical_effect": "Урон Электричеством, как и Паралич, увеличен на [[1d6]]"
   },
   {
+    id: spellId(),
     "name": "Левитация",
     "circle": 2,
     "traditions": "Стихии",
@@ -4546,6 +4970,7 @@ export const elementalSpells: SpellInfo[] = [
     "critical_effect": "Скорость Полёта увеличена до 8"
   },
   {
+    id: spellId(),
     "name": "Защита от Элементов",
     "circle": 3,
     "traditions": "Стихии",
@@ -4557,6 +4982,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Стихийные Узы",
     "circle": 3,
     "traditions": "Стихии",
@@ -4568,6 +4994,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Кузница Стихий",
     "circle": 3,
     "traditions": "Стихии",
@@ -4579,6 +5006,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Призыв Элементаля II",
     "circle": 3,
     "traditions": "Стихии",
@@ -4590,6 +5018,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Бросок Скалы",
     "circle": 3,
     "traditions": "Стихии",
@@ -4600,6 +5029,7 @@ export const elementalSpells: SpellInfo[] = [
     "critical_effect": "Урон увеличен на [[2d10]]"
   },
   {
+    id: spellId(),
     "name": "Магнит",
     "circle": 3,
     "traditions": "Стихии",
@@ -4611,6 +5041,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "8 часов",
   },
   {
+    id: spellId(),
     "name": "Управление Камнем",
     "circle": 3,
     "traditions": "Стихии",
@@ -4623,6 +5054,7 @@ export const elementalSpells: SpellInfo[] = [
     "square": "Влияет на камень в области Куба не более 2x2x2"
   },
   {
+    id: spellId(),
     "name": "Тяжесть/Легкость",
     "circle": 3,
     "traditions": "Стихии",
@@ -4634,6 +5066,7 @@ export const elementalSpells: SpellInfo[] = [
     "square": "Квадрат 4x4"
   },
   {
+    id: spellId(),
     "name": "Плавание в Земле",
     "circle": 3,
     "traditions": "Стихии",
@@ -4645,6 +5078,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Огненный Вихрь",
     "circle": 3,
     "traditions": "Стихии",
@@ -4656,6 +5090,7 @@ export const elementalSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Раскалённая Сажа",
     "circle": 3,
     "traditions": "Стихии",
@@ -4666,6 +5101,7 @@ export const elementalSpells: SpellInfo[] = [
     "critical_effect": "Урон Огнём, как и Тошнота увеличены на [[1d10]]. Кроме того, если суммарный урон Огнем от этого заклинания превзошел Защиту от Травм цели, её глаза временно повреждены, и она Полностью Ослеплена до конца раунда, даже если удалить сажу"
   },
   {
+    id: spellId(),
     "name": "Живой Факел",
     "circle": 3,
     "traditions": "Стихии",
@@ -4676,6 +5112,7 @@ export const elementalSpells: SpellInfo[] = [
     "critical_effect": "Урон Огнём, как и Поджигание увеличены на [[2d6]]"
   },
   {
+    id: spellId(),
     "name": "Пламенные Крылья",
     "circle": 3,
     "traditions": "Стихии",
@@ -4687,6 +5124,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Огненные Дротики",
     "circle": 3,
     "traditions": "Стихии",
@@ -4698,6 +5136,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Водная Тюрьма",
     "circle": 3,
     "traditions": "Стихии",
@@ -4708,6 +5147,7 @@ export const elementalSpells: SpellInfo[] = [
     "critical_effect": "Дробящий Урон, как и Паралич, увеличен на [[2d6]]. Если цель не может дышать под водой, она немедленно теряет 1 Кубик Отдыха"
   },
   {
+    id: spellId(),
     "name": "Арктическая Мгла",
     "circle": 3,
     "traditions": "Стихии",
@@ -4720,6 +5160,7 @@ export const elementalSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Дикое Обморожение",
     "circle": 3,
     "traditions": "Стихии",
@@ -4730,6 +5171,7 @@ export const elementalSpells: SpellInfo[] = [
     "critical_effect": "Изначальный урон Холодом, как и Паралич, увеличен на [[1d6]]"
   },
   {
+    id: spellId(),
     "name": "Форма Дыма",
     "circle": 3,
     "traditions": "Стихии",
@@ -4741,6 +5183,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена/Простой",
   },
   {
+    id: spellId(),
     "name": "Спокойная Циркуляция",
     "circle": 3,
     "traditions": "Стихии",
@@ -4751,6 +5194,7 @@ export const elementalSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Хождение по Воде",
     "circle": 3,
     "traditions": "Стихии",
@@ -4762,6 +5206,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Точный Разрез",
     "circle": 3,
     "traditions": "Стихии",
@@ -4772,6 +5217,7 @@ export const elementalSpells: SpellInfo[] = [
     "critical_effect": "Режущий урон увеличен на [[3d8]]"
   },
   {
+    id: spellId(),
     "name": "Электризация",
     "circle": 3,
     "traditions": "Стихии",
@@ -4783,6 +5229,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Призыв Молнии",
     "circle": 3,
     "traditions": "Стихии",
@@ -4793,6 +5240,7 @@ export const elementalSpells: SpellInfo[] = [
     "critical_effect": "Первичный урон Электричеством увеличен на [[1d10]], повторные применения не усиливаются - но имеют шанс на подобный Критический Эффект"
   },
   {
+    id: spellId(),
     "name": "Быстрый Поток",
     "circle": 3,
     "traditions": "Стихии",
@@ -4804,6 +5252,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Полёт",
     "circle": 3,
     "traditions": "Стихии",
@@ -4815,6 +5264,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Призыв Элементаля III",
     "circle": 4,
     "traditions": "Стихии",
@@ -4826,6 +5276,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Командование Элементалями",
     "circle": 4,
     "traditions": "Стихии",
@@ -4837,6 +5288,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Каменная Кожа",
     "circle": 4,
     "traditions": "Стихии",
@@ -4848,6 +5300,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Магматический Доспех",
     "circle": 4,
     "traditions": "Стихии",
@@ -4859,6 +5312,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Каменные Шипы",
     "circle": 4,
     "traditions": "Стихии",
@@ -4871,6 +5325,7 @@ export const elementalSpells: SpellInfo[] = [
     "square": "Квадрат 6x6"
   },
   {
+    id: spellId(),
     "name": "Каменный Охотник",
     "circle": 4,
     "traditions": "Стихии",
@@ -4882,6 +5337,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Огненный Щит",
     "circle": 4,
     "traditions": "Стихии",
@@ -4893,6 +5349,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Всплеск Лавы",
     "circle": 4,
     "traditions": "Стихии",
@@ -4903,6 +5360,7 @@ export const elementalSpells: SpellInfo[] = [
     "critical_effect": "Урон Огнём увеличен на [[5d6]]"
   },
   {
+    id: spellId(),
     "name": "Огненный Дракон",
     "circle": 4,
     "traditions": "Стихии",
@@ -4914,6 +5372,7 @@ export const elementalSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Топор Пылкости",
     "circle": 4,
     "traditions": "Стихии",
@@ -4925,6 +5384,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Ледяная Глыба",
     "circle": 4,
     "traditions": "Стихии",
@@ -4935,6 +5395,7 @@ export const elementalSpells: SpellInfo[] = [
     "critical_effect": "Ваше Действие Реакции не считается потраченным"
   },
   {
+    id: spellId(),
     "name": "Ледяной Шторм",
     "circle": 4,
     "traditions": "Стихии",
@@ -4947,6 +5408,7 @@ export const elementalSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Гейзер",
     "circle": 4,
     "traditions": "Стихии",
@@ -4958,6 +5420,7 @@ export const elementalSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Водяной Клон",
     "circle": 4,
     "traditions": "Стихии",
@@ -4969,6 +5432,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Подавляющая Молния",
     "circle": 4,
     "traditions": "Стихии",
@@ -4980,6 +5444,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "до конца раунда"
   },
   {
+    id: spellId(),
     "name": "Кинжал Розы Ветров",
     "circle": 4,
     "traditions": "Стихии",
@@ -4990,6 +5455,7 @@ export const elementalSpells: SpellInfo[] = [
     "critical_effect": "Режущий Урон увеличен на [[2d8]], и вы можете выбрать второй эффект из списка (нельзя выбрать один дважды)"
   },
   {
+    id: spellId(),
     "name": "Полёт над Землёй",
     "circle": 4,
     "traditions": "Стихии",
@@ -5001,6 +5467,7 @@ export const elementalSpells: SpellInfo[] = [
     "duration": "1 День"
   },
   {
+    id: spellId(),
     "name": "Пустой Звук",
     "circle": 4,
     "traditions": "Стихии",
@@ -5015,6 +5482,7 @@ export const elementalSpells: SpellInfo[] = [
 
 export const natureSpells: SpellInfo[] = [
   {
+    id: spellId(),
     "name": "Малые Стихийные Узы",
     "circle": 1,
     "traditions": "Природа",
@@ -5026,6 +5494,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Стихийный Щит",
     "circle": 1,
     "traditions": "Природа",
@@ -5037,6 +5506,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Стихийное Оружие",
     "circle": 1,
     "traditions": "Природа",
@@ -5048,6 +5518,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Земной Доспех",
     "circle": 1,
     "traditions": "Природа",
@@ -5059,6 +5530,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Бросок Камня",
     "circle": 1,
     "traditions": "Природа",
@@ -5069,6 +5541,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Урон увеличен на [[1d10]]"
   },
   {
+    id: spellId(),
     "name": "Яма",
     "circle": 1,
     "traditions": "Природа",
@@ -5081,6 +5554,7 @@ export const natureSpells: SpellInfo[] = [
     "square": "Куб 1x1x1"
   },
   {
+    id: spellId(),
     "name": "Врасти в Землю",
     "circle": 1,
     "traditions": "Природа",
@@ -5092,6 +5566,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Чувство Дрожи",
     "circle": 1,
     "traditions": "Природа",
@@ -5103,6 +5578,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Каменный Кулак",
     "circle": 1,
     "traditions": "Природа",
@@ -5114,6 +5590,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Пламенная Ловушка",
     "circle": 1,
     "traditions": "Природа",
@@ -5125,6 +5602,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Двойной Огонь",
     "circle": 1,
     "traditions": "Природа",
@@ -5135,6 +5613,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Урон Огнём по обоим увеличен на [[3d6]]"
   },
   {
+    id: spellId(),
     "name": "Выжигатель",
     "circle": 1,
     "traditions": "Природа",
@@ -5145,6 +5624,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Урон Огнём увеличен на [[2d6]]"
   },
   {
+    id: spellId(),
     "name": "Горячая Смола",
     "circle": 1,
     "traditions": "Природа",
@@ -5156,6 +5636,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Горящие Следы",
     "circle": 1,
     "traditions": "Природа",
@@ -5167,6 +5648,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Плевок Гейзера",
     "circle": 1,
     "traditions": "Природа",
@@ -5177,6 +5659,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Дробящий урон увеличен на [[2d6]], и вы можете увеличить дальность толчка до 5 или 6 клеток"
   },
   {
+    id: spellId(),
     "name": "Дыхание Йети",
     "circle": 1,
     "traditions": "Природа",
@@ -5188,6 +5671,7 @@ export const natureSpells: SpellInfo[] = [
     "square": "Конус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Скользкий Лёд",
     "circle": 1,
     "traditions": "Природа",
@@ -5200,6 +5684,7 @@ export const natureSpells: SpellInfo[] = [
     "square": "Квадрат 4x4"
   },
   {
+    id: spellId(),
     "name": "Туман",
     "circle": 1,
     "traditions": "Природа",
@@ -5212,6 +5697,7 @@ export const natureSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Мягкость Вод",
     "circle": 1,
     "traditions": "Природа",
@@ -5223,6 +5709,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Касание Молнии",
     "circle": 1,
     "traditions": "Природа",
@@ -5233,6 +5720,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Урон Электричеством увеличен на [[1d8]] и цель Ошеломлена"
   },
   {
+    id: spellId(),
     "name": "Ноги Ветра",
     "circle": 1,
     "traditions": "Природа",
@@ -5244,6 +5732,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "до конца раунда"
   },
   {
+    id: spellId(),
     "name": "Падение Пера",
     "circle": 1,
     "traditions": "Природа",
@@ -5255,6 +5744,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "до конца раунда"
   },
   {
+    id: spellId(),
     "name": "Летающие Сандали",
     "circle": 1,
     "traditions": "Природа",
@@ -5265,6 +5755,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Дальность перелёта увеличена до 12 клеток"
   },
   {
+    id: spellId(),
     "name": "Шепчущий Ветер",
     "circle": 1,
     "traditions": "Природа",
@@ -5275,6 +5766,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Призыв Элементаля I",
     "circle": 2,
     "traditions": "Природа",
@@ -5286,6 +5778,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Стихийный Глас Барина",
     "circle": 2,
     "traditions": "Природа",
@@ -5297,6 +5790,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Песчаный Доспех",
     "circle": 2,
     "traditions": "Природа",
@@ -5308,6 +5802,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Песчаный Покров",
     "circle": 2,
     "traditions": "Природа",
@@ -5319,6 +5814,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Бросок Валуна",
     "circle": 2,
     "traditions": "Природа",
@@ -5329,6 +5825,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Урон увеличен на [[1d10]]"
   },
   {
+    id: spellId(),
     "name": "Зыбучие Пески",
     "circle": 2,
     "traditions": "Природа",
@@ -5340,6 +5837,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "до 8 часов"
   },
   {
+    id: spellId(),
     "name": "Печь Абр-Абра",
     "circle": 2,
     "traditions": "Природа",
@@ -5351,6 +5849,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "1 день"
   },
   {
+    id: spellId(),
     "name": "Столб",
     "circle": 2,
     "traditions": "Природа",
@@ -5363,6 +5862,7 @@ export const natureSpells: SpellInfo[] = [
     "square": "Квадрат 2x2"
   },
   {
+    id: spellId(),
     "name": "Вспышка",
     "circle": 2,
     "traditions": "Природа",
@@ -5375,6 +5875,7 @@ export const natureSpells: SpellInfo[] = [
     "square": "Радиус 6 клеток"
   },
   {
+    id: spellId(),
     "name": "Вулканический Удар",
     "circle": 2,
     "traditions": "Природа",
@@ -5386,6 +5887,7 @@ export const natureSpells: SpellInfo[] = [
     "square": "Квадрат 2x2"
   },
   {
+    id: spellId(),
     "name": "Возгорание",
     "circle": 2,
     "traditions": "Природа",
@@ -5397,6 +5899,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Огненный Сюрикен",
     "circle": 2,
     "traditions": "Природа",
@@ -5408,6 +5911,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Пламенный Клинок",
     "circle": 2,
     "traditions": "Природа",
@@ -5419,6 +5923,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Примерзание",
     "circle": 2,
     "traditions": "Природа",
@@ -5430,6 +5935,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Кольцо Прилива",
     "circle": 2,
     "traditions": "Природа",
@@ -5441,6 +5947,7 @@ export const natureSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки вокруг вас"
   },
   {
+    id: spellId(),
     "name": "Тропический Дождь",
     "circle": 2,
     "traditions": "Природа",
@@ -5453,6 +5960,7 @@ export const natureSpells: SpellInfo[] = [
     "square": "Радиус 6 клеток"
   },
   {
+    id: spellId(),
     "name": "Луч Океана",
     "circle": 2,
     "traditions": "Природа",
@@ -5463,6 +5971,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Режущий урон увеличен на [[2d6]]"
   },
   {
+    id: spellId(),
     "name": "Жидкая Мембрана",
     "circle": 2,
     "traditions": "Природа",
@@ -5473,6 +5982,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Поглощает 12 единиц урона"
   },
   {
+    id: spellId(),
     "name": "Щит Облаков",
     "circle": 2,
     "traditions": "Природа",
@@ -5484,6 +5994,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Поток Ветра",
     "circle": 2,
     "traditions": "Природа",
@@ -5495,6 +6006,7 @@ export const natureSpells: SpellInfo[] = [
     "square": "Радиус 6 клеток"
   },
   {
+    id: spellId(),
     "name": "Громовой Наскок",
     "circle": 2,
     "traditions": "Природа",
@@ -5506,6 +6018,7 @@ export const natureSpells: SpellInfo[] = [
     "square": "Радиус 2 клетки от вас после телепортации"
   },
   {
+    id: spellId(),
     "name": "Электрическая Змея",
     "circle": 2,
     "traditions": "Природа",
@@ -5516,6 +6029,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Урон Электричеством, как и Паралич, увеличен на [[1d6]]"
   },
   {
+    id: spellId(),
     "name": "Левитация",
     "circle": 2,
     "traditions": "Природа",
@@ -5526,6 +6040,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Скорость Полёта увеличена до 8"
   },
   {
+    id: spellId(),
     "name": "Защита от Элементов",
     "circle": 3,
     "traditions": "Природа",
@@ -5537,6 +6052,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Стихийные Узы",
     "circle": 3,
     "traditions": "Природа",
@@ -5548,6 +6064,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Кузница Стихий",
     "circle": 3,
     "traditions": "Природа",
@@ -5559,6 +6076,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Призыв Элементаля II",
     "circle": 3,
     "traditions": "Природа",
@@ -5570,6 +6088,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Бросок Скалы",
     "circle": 3,
     "traditions": "Природа",
@@ -5580,6 +6099,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Урон увеличен на [[2d10]]"
   },
   {
+    id: spellId(),
     "name": "Магнит",
     "circle": 3,
     "traditions": "Природа",
@@ -5591,6 +6111,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "8 часов",
   },
   {
+    id: spellId(),
     "name": "Управление Камнем",
     "circle": 3,
     "traditions": "Природа",
@@ -5603,6 +6124,7 @@ export const natureSpells: SpellInfo[] = [
     "square": "Влияет на камень в области Куба не более 2x2x2"
   },
   {
+    id: spellId(),
     "name": "Тяжесть/Легкость",
     "circle": 3,
     "traditions": "Природа",
@@ -5614,6 +6136,7 @@ export const natureSpells: SpellInfo[] = [
     "square": "Квадрат 4x4"
   },
   {
+    id: spellId(),
     "name": "Плавание в Земле",
     "circle": 3,
     "traditions": "Природа",
@@ -5625,6 +6148,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Огненный Вихрь",
     "circle": 3,
     "traditions": "Природа",
@@ -5636,6 +6160,7 @@ export const natureSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Раскалённая Сажа",
     "circle": 3,
     "traditions": "Природа",
@@ -5646,6 +6171,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Урон Огнём, как и Тошнота увеличены на [[1d10]]. Кроме того, если суммарный урон Огнем от этого заклинания превзошел Защиту от Травм цели, её глаза временно повреждены, и она Полностью Ослеплена до конца раунда, даже если удалить сажу"
   },
   {
+    id: spellId(),
     "name": "Живой Факел",
     "circle": 3,
     "traditions": "Природа",
@@ -5656,6 +6182,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Урон Огнём, как и Поджигание увеличены на [[2d6]]"
   },
   {
+    id: spellId(),
     "name": "Пламенные Крылья",
     "circle": 3,
     "traditions": "Природа",
@@ -5667,6 +6194,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена",
   },
   {
+    id: spellId(),
     "name": "Огненные Дротики",
     "circle": 3,
     "traditions": "Природа",
@@ -5678,6 +6206,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Водная Тюрьма",
     "circle": 3,
     "traditions": "Природа",
@@ -5688,6 +6217,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Дробящий Урон, как и Паралич, увеличен на [[2d6]]. Если цель не может дышать под водой, она немедленно теряет 1 Кубик Отдыха"
   },
   {
+    id: spellId(),
     "name": "Арктическая Мгла",
     "circle": 3,
     "traditions": "Природа",
@@ -5700,6 +6230,7 @@ export const natureSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Дикое Обморожение",
     "circle": 3,
     "traditions": "Природа",
@@ -5710,6 +6241,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Изначальный урон Холодом, как и Паралич, увеличен на [[1d6]]"
   },
   {
+    id: spellId(),
     "name": "Форма Дыма",
     "circle": 3,
     "traditions": "Природа",
@@ -5721,6 +6253,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена/Простой",
   },
   {
+    id: spellId(),
     "name": "Спокойная Циркуляция",
     "circle": 3,
     "traditions": "Природа",
@@ -5731,6 +6264,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Хождение по Воде",
     "circle": 3,
     "traditions": "Природа",
@@ -5742,6 +6276,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Точный Разрез",
     "circle": 3,
     "traditions": "Природа",
@@ -5752,6 +6287,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Режущий урон увеличен на [[3d8]]"
   },
   {
+    id: spellId(),
     "name": "Электризация",
     "circle": 3,
     "traditions": "Природа",
@@ -5763,6 +6299,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Призыв Молнии",
     "circle": 3,
     "traditions": "Природа",
@@ -5773,6 +6310,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Первичный урон Электричеством увеличен на [[1d10]], повторные применения не усиливаются - но имеют шанс на подобный Критический Эффект"
   },
   {
+    id: spellId(),
     "name": "Быстрый Поток",
     "circle": 3,
     "traditions": "Природа",
@@ -5784,6 +6322,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Полёт",
     "circle": 3,
     "traditions": "Природа",
@@ -5795,6 +6334,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Призыв Элементаля III",
     "circle": 4,
     "traditions": "Природа",
@@ -5806,6 +6346,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Командование Элементалями",
     "circle": 4,
     "traditions": "Природа",
@@ -5817,6 +6358,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Каменная Кожа",
     "circle": 4,
     "traditions": "Природа",
@@ -5828,6 +6370,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Магматический Доспех",
     "circle": 4,
     "traditions": "Природа",
@@ -5839,6 +6382,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Каменные Шипы",
     "circle": 4,
     "traditions": "Природа",
@@ -5851,6 +6395,7 @@ export const natureSpells: SpellInfo[] = [
     "square": "Квадрат 6x6"
   },
   {
+    id: spellId(),
     "name": "Каменный Охотник",
     "circle": 4,
     "traditions": "Природа",
@@ -5862,6 +6407,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Огненный Щит",
     "circle": 4,
     "traditions": "Природа",
@@ -5873,6 +6419,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Всплеск Лавы",
     "circle": 4,
     "traditions": "Природа",
@@ -5883,6 +6430,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Урон Огнём увеличен на [[5d6]]"
   },
   {
+    id: spellId(),
     "name": "Огненный Дракон",
     "circle": 4,
     "traditions": "Природа",
@@ -5894,6 +6442,7 @@ export const natureSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Топор Пылкости",
     "circle": 4,
     "traditions": "Природа",
@@ -5905,6 +6454,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Ледяная Глыба",
     "circle": 4,
     "traditions": "Природа",
@@ -5915,6 +6465,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Ваше Действие Реакции не считается потраченным"
   },
   {
+    id: spellId(),
     "name": "Ледяной Шторм",
     "circle": 4,
     "traditions": "Природа",
@@ -5927,6 +6478,7 @@ export const natureSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Гейзер",
     "circle": 4,
     "traditions": "Природа",
@@ -5938,6 +6490,7 @@ export const natureSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Водяной Клон",
     "circle": 4,
     "traditions": "Природа",
@@ -5949,6 +6502,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Подавляющая Молния",
     "circle": 4,
     "traditions": "Природа",
@@ -5960,6 +6514,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "до конца раунда"
   },
   {
+    id: spellId(),
     "name": "Кинжал Розы Ветров",
     "circle": 4,
     "traditions": "Природа",
@@ -5970,6 +6525,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Режущий Урон увеличен на [[2d8]], и вы можете выбрать второй эффект из списка (нельзя выбрать один дважды)"
   },
   {
+    id: spellId(),
     "name": "Полёт над Землёй",
     "circle": 4,
     "traditions": "Природа",
@@ -5981,6 +6537,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "1 День"
   },
   {
+    id: spellId(),
     "name": "Пустой Звук",
     "circle": 4,
     "traditions": "Природа",
@@ -5992,6 +6549,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "до конца раунда"
   },
   {
+    id: spellId(),
     "name": "Свет Истины",
     "circle": 3,
     "traditions": "Природа",
@@ -6004,6 +6562,7 @@ export const natureSpells: SpellInfo[] = [
     "square": "Радиус 6 клеток"
   },
   {
+    id: spellId(),
     "name": "Лазурный Шквал Рики",
     "circle": 3,
     "traditions": "Природа",
@@ -6014,6 +6573,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "При попадании этими атаками вы наносите дополнительно [[2d4]] урона Излучением"
   },
   {
+    id: spellId(),
     "name": "Указывающая Рука",
     "circle": 3,
     "traditions": "Природа",
@@ -6025,6 +6585,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "1 День"
   },
   {
+    id: spellId(),
     "name": "Возрождение",
     "circle": 3,
     "traditions": "Природа",
@@ -6035,6 +6596,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Существо имеет 50% максимальных Очков Здоровья, 3 Очка Травмы вместо 5, и 0 Кубиков Отдыха вместо -2"
   },
   {
+    id: spellId(),
     "name": "Прорицание Послесмертия",
     "circle": 3,
     "traditions": "Природа",
@@ -6045,6 +6607,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Каменная Кожа",
     "circle": 4,
     "traditions": "Природа",
@@ -6056,6 +6619,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Доспех из Плюща",
     "circle": 4,
     "traditions": "Природа",
@@ -6067,6 +6631,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Свобода Перемещения",
     "circle": 4,
     "traditions": "Природа",
@@ -6078,6 +6643,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Посох из Белены",
     "circle": 4,
     "traditions": "Природа",
@@ -6089,6 +6655,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Ржавый Луч",
     "circle": 4,
     "traditions": "Природа",
@@ -6099,6 +6666,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Урон Чистой Магией по существам из металла увеличен на [[5d6]]"
   },
   {
+    id: spellId(),
     "name": "Ядовитое Дыхание",
     "circle": 4,
     "traditions": "Природа",
@@ -6110,6 +6678,7 @@ export const natureSpells: SpellInfo[] = [
     "square": "Конус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Нашествие Насекомых",
     "circle": 4,
     "traditions": "Природа",
@@ -6122,6 +6691,7 @@ export const natureSpells: SpellInfo[] = [
     "square": "Радиус 2 клетки"
   },
   {
+    id: spellId(),
     "name": "Самум",
     "circle": 4,
     "traditions": "Природа",
@@ -6133,6 +6703,7 @@ export const natureSpells: SpellInfo[] = [
     "square": "Радиус 6 клеток"
   },
   {
+    id: spellId(),
     "name": "Увядание и Цветение II",
     "circle": 4,
     "traditions": "Природа",
@@ -6145,6 +6716,7 @@ export const natureSpells: SpellInfo[] = [
     "square": "Квадрат 6x6"
   },
   {
+    id: spellId(),
     "name": "Подчинить Растение",
     "circle": 4,
     "traditions": "Природа",
@@ -6156,6 +6728,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Хватающая Лиана",
     "circle": 4,
     "traditions": "Природа",
@@ -6166,6 +6739,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "При появлении Хватающая Лиана также наносит цели 15 урона Ядом"
   },
   {
+    id: spellId(),
     "name": "Волшебные Когти II",
     "circle": 4,
     "traditions": "Природа",
@@ -6177,6 +6751,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Каменный Охотник",
     "circle": 4,
     "traditions": "Природа",
@@ -6188,6 +6763,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Призыв Зверя III",
     "circle": 4,
     "traditions": "Природа",
@@ -6199,6 +6775,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Призыв Феи II",
     "circle": 4,
     "traditions": "Природа",
@@ -6210,6 +6787,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Форма Хищника",
     "circle": 4,
     "traditions": "Природа",
@@ -6221,6 +6799,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Мощь Первого Дуба",
     "circle": 4,
     "traditions": "Природа",
@@ -6232,6 +6811,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена",
   },
   {
+    id: spellId(),
     "name": "Всадник Хамелеона",
     "circle": 4,
     "traditions": "Природа",
@@ -6243,6 +6823,7 @@ export const natureSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Стена Зарослей",
     "circle": 4,
     "traditions": "Природа",
@@ -6255,6 +6836,7 @@ export const natureSpells: SpellInfo[] = [
     "square": "Параллелепипед 12x4x4"
   },
   {
+    id: spellId(),
     "name": "Ускользающий Бриз",
     "circle": 4,
     "traditions": "Природа",
@@ -6265,6 +6847,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Увеличиваете перемещение до вплоть 8-ми клеток"
   },
   {
+    id: spellId(),
     "name": "Древесный Шаг",
     "circle": 4,
     "traditions": "Природа",
@@ -6275,6 +6858,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Реинкарнация",
     "circle": 4,
     "traditions": "Природа",
@@ -6285,6 +6869,7 @@ export const natureSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Память Воды",
     "circle": 4,
     "traditions": "Природа",
@@ -6298,6 +6883,7 @@ export const natureSpells: SpellInfo[] = [
 
 export const mysticismSpells: SpellInfo[] = [
   {
+    id: spellId(),
     "name": "Понимание Языков",
     "circle": 1,
     "traditions": "Мистика",
@@ -6309,6 +6895,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Маскировка",
     "circle": 1,
     "traditions": "Мистика",
@@ -6320,6 +6907,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Быстрая Невидимость",
     "circle": 1,
     "traditions": "Мистика",
@@ -6331,6 +6919,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "до конца раунда"
   },
   {
+    id: spellId(),
     "name": "Теневая Игла",
     "circle": 1,
     "traditions": "Мистика",
@@ -6341,6 +6930,7 @@ export const mysticismSpells: SpellInfo[] = [
     "critical_effect": "Колющий урон увеличен на [[1d10]]"
   },
   {
+    id: spellId(),
     "name": "Мистическое Пламя",
     "circle": 1,
     "traditions": "Мистика",
@@ -6351,6 +6941,7 @@ export const mysticismSpells: SpellInfo[] = [
     "critical_effect": "Изначальный урон Огнём, как и Поджигание, увеличен на [[1d12]]"
   },
   {
+    id: spellId(),
     "name": "Хлопок",
     "circle": 1,
     "traditions": "Мистика",
@@ -6361,6 +6952,7 @@ export const mysticismSpells: SpellInfo[] = [
     "critical_effect": "Урон звуком увеличен на [[1d6]], и цель автоматически падает"
   },
   {
+    id: spellId(),
     "name": "Отвлекающая Рука",
     "circle": 1,
     "traditions": "Мистика",
@@ -6372,6 +6964,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Малое Безумие",
     "circle": 1,
     "traditions": "Мистика",
@@ -6382,6 +6975,7 @@ export const mysticismSpells: SpellInfo[] = [
     "critical_effect": "Длительность Безумия увеличена до 2 Кубиков Действия"
   },
   {
+    id: spellId(),
     "name": "Испуг",
     "circle": 1,
     "traditions": "Мистика",
@@ -6392,6 +6986,7 @@ export const mysticismSpells: SpellInfo[] = [
     "critical_effect": "Цель ухудшает все свои Кубики Атаки, Кубики Магии и Кубики Умения на одну категорию до конца раунда"
   },
   {
+    id: spellId(),
     "name": "Смех",
     "circle": 1,
     "traditions": "Мистика",
@@ -6402,6 +6997,7 @@ export const mysticismSpells: SpellInfo[] = [
     "critical_effect": "Изначальный Психический урон, как и Парализация, увеличен на [[2d4]]"
   },
   {
+    id: spellId(),
     "name": "Плеть Разума",
     "circle": 1,
     "traditions": "Мистика",
@@ -6412,6 +7008,7 @@ export const mysticismSpells: SpellInfo[] = [
     "critical_effect": "Изначальный Психический урон увеличен на [[1d10]], урон в Харизму на 2"
   },
   {
+    id: spellId(),
     "name": "Меч В Груди",
     "circle": 1,
     "traditions": "Мистика",
@@ -6422,6 +7019,7 @@ export const mysticismSpells: SpellInfo[] = [
     "critical_effect": "Психический урон увеличен на [[1d12]]"
   },
   {
+    id: spellId(),
     "name": "Теневая Сеть",
     "circle": 1,
     "traditions": "Мистика",
@@ -6433,6 +7031,7 @@ export const mysticismSpells: SpellInfo[] = [
     "square": "Радиус 1 клетка"
   },
   {
+    id: spellId(),
     "name": "Цветные Брызги",
     "circle": 1,
     "traditions": "Мистика",
@@ -6445,6 +7044,7 @@ export const mysticismSpells: SpellInfo[] = [
     "square": "Конус 3 клетки"
   },
   {
+    id: spellId(),
     "name": "Крюк Тарак Тока",
     "circle": 1,
     "traditions": "Мистика",
@@ -6455,6 +7055,7 @@ export const mysticismSpells: SpellInfo[] = [
     "critical_effect": "Изначальный урон увеличен до 12 (урон за перемещение без изменений)"
   },
   {
+    id: spellId(),
     "name": "Сладкий Яд",
     "circle": 1,
     "traditions": "Мистика",
@@ -6465,6 +7066,7 @@ export const mysticismSpells: SpellInfo[] = [
     "critical_effect": "Урон ядом уменьшается или увеличивается на [[1d4]] на ваш выбор. Первую опцию часто используют волшебники-мазохисты, подсевшие на опасное удовольствие самим пить этот яд"
   },
   {
+    id: spellId(),
     "name": "Сон",
     "circle": 1,
     "traditions": "Мистика",
@@ -6477,6 +7079,7 @@ export const mysticismSpells: SpellInfo[] = [
     "square": "Квадрат 4x4"
   },
   {
+    id: spellId(),
     "name": "Колыбельная",
     "circle": 1,
     "traditions": "Мистика",
@@ -6488,6 +7091,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Слепота/Глухота",
     "circle": 1,
     "traditions": "Мистика",
@@ -6499,6 +7103,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Малая Иллюзия",
     "circle": 1,
     "traditions": "Мистика",
@@ -6511,6 +7116,7 @@ export const mysticismSpells: SpellInfo[] = [
     "square": "Куб 2x2x2"
   },
   {
+    id: spellId(),
     "name": "Дружба",
     "circle": 1,
     "traditions": "Мистика",
@@ -6522,6 +7128,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "до конца раунда"
   },
   {
+    id: spellId(),
     "name": "Подмена Понятий",
     "circle": 1,
     "traditions": "Мистика",
@@ -6532,6 +7139,7 @@ export const mysticismSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Изменить Зелье",
     "circle": 1,
     "traditions": "Мистика",
@@ -6543,6 +7151,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Парад Ножей",
     "circle": 1,
     "traditions": "Мистика",
@@ -6553,6 +7162,7 @@ export const mysticismSpells: SpellInfo[] = [
     "critical_effect": "Кубики Атаки от этого заклинания увеличены с 1d16 до 1d20"
   },
   {
+    id: spellId(),
     "name": "Джовушкер",
     "circle": 1,
     "traditions": "Мистика",
@@ -6564,6 +7174,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "до конца раунда"
   },
   {
+    id: spellId(),
     "name": "Легкий Кулак",
     "circle": 1,
     "traditions": "Мистика",
@@ -6575,6 +7186,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Ясный Ум",
     "circle": 1,
     "traditions": "Мистика",
@@ -6586,6 +7198,7 @@ export const mysticismSpells: SpellInfo[] = [
     "square": "Радиус 3 клетки"
   },
   {
+    id: spellId(),
     "name": "Отвод Глаз",
     "circle": 2,
     "traditions": "Мистика",
@@ -6597,6 +7210,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Видеть Невидимое",
     "circle": 2,
     "traditions": "Мистика",
@@ -6608,6 +7222,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Глаза Ищущего",
     "circle": 2,
     "traditions": "Мистика",
@@ -6619,6 +7234,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Сапёр",
     "circle": 2,
     "traditions": "Мистика",
@@ -6630,6 +7246,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Истинная Душа",
     "circle": 2,
     "traditions": "Мистика",
@@ -6641,6 +7258,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Двойники",
     "circle": 3,
     "traditions": "Мистика",
@@ -6652,6 +7270,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Размытие",
     "circle": 2,
     "traditions": "Мистика",
@@ -6663,6 +7282,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Перо Феникса",
     "circle": 2,
     "traditions": "Мистика",
@@ -6673,6 +7293,7 @@ export const mysticismSpells: SpellInfo[] = [
     "critical_effect": "Урон огнём увеличен на [[2d10]]"
   },
   {
+    id: spellId(),
     "name": "Дребезги",
     "circle": 2,
     "traditions": "Мистика",
@@ -6684,6 +7305,7 @@ export const mysticismSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Ужас",
     "circle": 2,
     "traditions": "Мистика",
@@ -6695,6 +7317,7 @@ export const mysticismSpells: SpellInfo[] = [
     "square": "Радиус: 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Луч Идиотизма",
     "circle": 2,
     "traditions": "Мистика",
@@ -6705,6 +7328,7 @@ export const mysticismSpells: SpellInfo[] = [
     "critical_effect": "Вы наносите урон в две разные Характеристики на выбор из списка выше"
   },
   {
+    id: spellId(),
     "name": "Сонная Игла",
     "circle": 2,
     "traditions": "Мистика",
@@ -6716,6 +7340,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "8 часов"
   },
   {
+    id: spellId(),
     "name": "Паралич",
     "circle": 2,
     "traditions": "Мистика",
@@ -6726,6 +7351,7 @@ export const mysticismSpells: SpellInfo[] = [
     "critical_effect": "Изначальный Психический урон, как и Паралич, увеличен на [[1d6]]"
   },
   {
+    id: spellId(),
     "name": "Беспокойство",
     "circle": 2,
     "traditions": "Мистика",
@@ -6736,6 +7362,7 @@ export const mysticismSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Приказ",
     "circle": 2,
     "traditions": "Мистика",
@@ -6746,6 +7373,7 @@ export const mysticismSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Очарование",
     "circle": 2,
     "traditions": "Мистика",
@@ -6757,6 +7385,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "1 День"
   },
   {
+    id: spellId(),
     "name": "Летаргия",
     "circle": 2,
     "traditions": "Мистика",
@@ -6769,6 +7398,7 @@ export const mysticismSpells: SpellInfo[] = [
     "square": "Квадрат 4x4"
   },
   {
+    id: spellId(),
     "name": "Метнуть Внешность",
     "circle": 2,
     "traditions": "Мистика",
@@ -6780,6 +7410,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Дождь из Лягушек",
     "circle": 2,
     "traditions": "Мистика",
@@ -6792,6 +7423,7 @@ export const mysticismSpells: SpellInfo[] = [
     "square": "Радиус 6 клеток"
   },
   {
+    id: spellId(),
     "name": "Тишина",
     "circle": 2,
     "traditions": "Мистика",
@@ -6804,6 +7436,7 @@ export const mysticismSpells: SpellInfo[] = [
     "square": "Радиус 6 клеток"
   },
   {
+    id: spellId(),
     "name": "Невидимость",
     "circle": 2,
     "traditions": "Мистика",
@@ -6815,6 +7448,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Малый Героизм",
     "circle": 2,
     "traditions": "Мистика",
@@ -6827,6 +7461,7 @@ export const mysticismSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Чтение Мыслей",
     "circle": 2,
     "traditions": "Мистика",
@@ -6837,6 +7472,7 @@ export const mysticismSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Пустота",
     "circle": 2,
     "traditions": "Мистика",
@@ -6849,6 +7485,7 @@ export const mysticismSpells: SpellInfo[] = [
     "square": "Куб 8x8x8"
   },
   {
+    id: spellId(),
     "name": "Лестница в Небо",
     "circle": 2,
     "traditions": "Мистика",
@@ -6860,6 +7497,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "8 часов",
   },
   {
+    id: spellId(),
     "name": "Стук",
     "circle": 2,
     "traditions": "Мистика",
@@ -6870,6 +7508,7 @@ export const mysticismSpells: SpellInfo[] = [
     "critical_effect": "Прочность для открытия или закрытия увеличена до 40"
   },
   {
+    id: spellId(),
     "name": "Певчая Птица",
     "circle": 2,
     "traditions": "Мистика",
@@ -6882,6 +7521,7 @@ export const mysticismSpells: SpellInfo[] = [
     "square": "Радиус 12 клеток"
   },
   {
+    id: spellId(),
     "name": "Хитрость Лисицы",
     "circle": 2,
     "traditions": "Мистика",
@@ -6893,6 +7533,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Мудрость Совы",
     "circle": 2,
     "traditions": "Мистика",
@@ -6904,6 +7545,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Величие Орла",
     "circle": 2,
     "traditions": "Мистика",
@@ -6915,6 +7557,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Защита от Звука",
     "circle": 3,
     "traditions": "Мистика",
@@ -6926,6 +7569,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Притворится Мёртвым",
     "circle": 3,
     "traditions": "Мистика",
@@ -6937,6 +7581,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Шок и Трепет",
     "circle": 3,
     "traditions": "Мистика",
@@ -6948,6 +7593,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Допельгангер",
     "circle": 3,
     "traditions": "Мистика",
@@ -6959,6 +7605,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Смещение",
     "circle": 3,
     "traditions": "Мистика",
@@ -6970,6 +7617,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Зрение Арканы",
     "circle": 3,
     "traditions": "Мистика",
@@ -6981,6 +7629,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Яд Разума",
     "circle": 3,
     "traditions": "Мистика",
@@ -6991,6 +7640,7 @@ export const mysticismSpells: SpellInfo[] = [
     "critical_effect": "Цель также немедленно получает [[3d6]] Психического урона"
   },
   {
+    id: spellId(),
     "name": "Легкая Мишень",
     "circle": 3,
     "traditions": "Мистика",
@@ -7001,6 +7651,7 @@ export const mysticismSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Конус Отчаяния",
     "circle": 3,
     "traditions": "Мистика",
@@ -7012,6 +7663,7 @@ export const mysticismSpells: SpellInfo[] = [
     "square": "Конус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Химера",
     "circle": 3,
     "traditions": "Мистика",
@@ -7023,6 +7675,7 @@ export const mysticismSpells: SpellInfo[] = [
     "square": "Конус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Гипнотический Узор",
     "circle": 3,
     "traditions": "Мистика",
@@ -7035,6 +7688,7 @@ export const mysticismSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Безумие",
     "circle": 3,
     "traditions": "Мистика",
@@ -7045,6 +7699,7 @@ export const mysticismSpells: SpellInfo[] = [
     "critical_effect": "Длительность Безумия увеличена до 4 Кубиков Действия"
   },
   {
+    id: spellId(),
     "name": "Принуждение",
     "circle": 3,
     "traditions": "Мистика",
@@ -7056,6 +7711,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Слово: Сон",
     "circle": 3,
     "traditions": "Мистика",
@@ -7067,6 +7723,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "8 часов"
   },
   {
+    id: spellId(),
     "name": "Ход Конем",
     "circle": 3,
     "traditions": "Мистика",
@@ -7077,6 +7734,7 @@ export const mysticismSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Шпион",
     "circle": 3,
     "traditions": "Мистика",
@@ -7088,6 +7746,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Подслушать/Подсмотреть",
     "circle": 3,
     "traditions": "Мистика",
@@ -7100,6 +7759,7 @@ export const mysticismSpells: SpellInfo[] = [
     "square": "Радиус 12 клеток"
   },
   {
+    id: spellId(),
     "name": "Сфера Невидимости",
     "circle": 3,
     "traditions": "Мистика",
@@ -7111,6 +7771,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Иллюзия",
     "circle": 3,
     "traditions": "Мистика",
@@ -7123,6 +7784,7 @@ export const mysticismSpells: SpellInfo[] = [
     "square": "Куб 4x4x4"
   },
   {
+    id: spellId(),
     "name": "Тристаль",
     "circle": 3,
     "traditions": "Мистика",
@@ -7133,6 +7795,7 @@ export const mysticismSpells: SpellInfo[] = [
     "critical_effect": "Кубики Атаки от этого заклинания увеличены с 1d16 до 1d20"
   },
   {
+    id: spellId(),
     "name": "Прыжок Серебра",
     "circle": 3,
     "traditions": "Мистика",
@@ -7144,6 +7807,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Теневой Клон",
     "circle": 3,
     "traditions": "Мистика",
@@ -7155,6 +7819,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Компетентность",
     "circle": 3,
     "traditions": "Мистика",
@@ -7166,6 +7831,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "до конца раунда"
   },
   {
+    id: spellId(),
     "name": "Дух Гармонии",
     "circle": 3,
     "traditions": "Мистика",
@@ -7177,6 +7843,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Оракул",
     "circle": 3,
     "traditions": "Мистика",
@@ -7189,6 +7856,7 @@ export const mysticismSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Остановка",
     "circle": 3,
     "traditions": "Мистика",
@@ -7199,6 +7867,7 @@ export const mysticismSpells: SpellInfo[] = [
     "critical_effect": "Существо также получает [[4d4]] Психического урона"
   },
   {
+    id: spellId(),
     "name": "Просмотр Защит",
     "circle": 4,
     "traditions": "Мистика",
@@ -7209,6 +7878,7 @@ export const mysticismSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Допельгангер",
     "circle": 4,
     "traditions": "Мистика",
@@ -7220,6 +7890,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Телепатия",
     "circle": 4,
     "traditions": "Мистика",
@@ -7231,6 +7902,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Улучшенные Двойники",
     "circle": 4,
     "traditions": "Мистика",
@@ -7242,6 +7914,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Хаотичные Приказы",
     "circle": 4,
     "traditions": "Мистика",
@@ -7253,6 +7926,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Травы и Благовония",
     "circle": 4,
     "traditions": "Мистика",
@@ -7264,6 +7938,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Тоскливая Серость",
     "circle": 4,
     "traditions": "Мистика",
@@ -7275,6 +7950,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Пока не снято"
   },
   {
+    id: spellId(),
     "name": "Фантомный Убийца",
     "circle": 4,
     "traditions": "Мистика",
@@ -7286,6 +7962,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Теневая Магия I",
     "circle": 4,
     "traditions": "Мистика",
@@ -7297,6 +7974,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Эссенция Каина",
     "circle": 4,
     "traditions": "Мистика",
@@ -7308,6 +7986,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Истинный Страх",
     "circle": 4,
     "traditions": "Мистика",
@@ -7319,6 +7998,7 @@ export const mysticismSpells: SpellInfo[] = [
     "square": "Радиус: 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Зеркало Ана",
     "circle": 4,
     "traditions": "Мистика",
@@ -7330,6 +8010,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Ракушка Окани",
     "circle": 4,
     "traditions": "Мистика",
@@ -7342,6 +8023,7 @@ export const mysticismSpells: SpellInfo[] = [
     "square": "2x2x1"
   },
   {
+    id: spellId(),
     "name": "Ловушкагедон",
     "circle": 4,
     "traditions": "Мистика",
@@ -7352,6 +8034,7 @@ export const mysticismSpells: SpellInfo[] = [
     "critical_effect": "Вы создаёте ещё одну копию установленной ловушки"
   },
   {
+    id: spellId(),
     "name": "Героизм",
     "circle": 4,
     "traditions": "Мистика",
@@ -7364,6 +8047,7 @@ export const mysticismSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Улучшенная Невидимость",
     "circle": 4,
     "traditions": "Мистика",
@@ -7375,6 +8059,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Волшебный Глаз",
     "circle": 4,
     "traditions": "Мистика",
@@ -7386,6 +8071,7 @@ export const mysticismSpells: SpellInfo[] = [
     "duration": "8 часов"
   },
   {
+    id: spellId(),
     "name": "Универсальный Поиск",
     "circle": 4,
     "traditions": "Мистика",
@@ -7399,6 +8085,7 @@ export const mysticismSpells: SpellInfo[] = [
 
 export const chaosSpells: SpellInfo[] = [
   {
+    id: spellId(),
     "name": "Сердце Карт",
     "circle": 1,
     "traditions": "Хаос",
@@ -7410,6 +8097,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Lingua Demonic",
     "circle": 1,
     "traditions": "Хаос",
@@ -7421,6 +8109,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Маскировка",
     "circle": 1,
     "traditions": "Хаос",
@@ -7432,6 +8121,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Плоть Демона",
     "circle": 1,
     "traditions": "Хаос",
@@ -7443,6 +8133,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Искры Дрюкина",
     "circle": 1,
     "traditions": "Хаос",
@@ -7453,6 +8144,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "Урон электричеством увеличен на [[1d12]], а порог Ошеломления до 15"
   },
   {
+    id: spellId(),
     "name": "Огонь и Кровь",
     "circle": 1,
     "traditions": "Хаос",
@@ -7463,6 +8155,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "Сложность Кровотечения и Поджигания увеличена на 2"
   },
   {
+    id: spellId(),
     "name": "Чертов Хвост",
     "circle": 1,
     "traditions": "Хаос",
@@ -7473,6 +8166,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "Урон Ядом увеличен на 3d6"
   },
   {
+    id: spellId(),
     "name": "Кубики Хаоса",
     "circle": 1,
     "traditions": "Хаос",
@@ -7483,6 +8177,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "Вы можете перебросить один из кубиков 1d6 и принять новый результат"
   },
   {
+    id: spellId(),
     "name": "Разбитое Зеркало",
     "circle": 1,
     "traditions": "Хаос",
@@ -7493,6 +8188,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "Урон Холодом увеличен на 3d6. Лишает 2 Очков Удачи вместо 1-го, если есть"
   },
   {
+    id: spellId(),
     "name": "Крик Летучей Мыши",
     "circle": 1,
     "traditions": "Хаос",
@@ -7505,6 +8201,7 @@ export const chaosSpells: SpellInfo[] = [
     "square": "Конус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Буффонада",
     "circle": 1,
     "traditions": "Хаос",
@@ -7516,6 +8213,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Малое Безумие",
     "circle": 1,
     "traditions": "Хаос",
@@ -7526,6 +8224,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "Длительность Безумия увеличена до 2 Кубиков Действия"
   },
   {
+    id: spellId(),
     "name": "Вертиго",
     "circle": 1,
     "traditions": "Хаос",
@@ -7536,6 +8235,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "Цель также Падает"
   },
   {
+    id: spellId(),
     "name": "Проказник",
     "circle": 1,
     "traditions": "Хаос",
@@ -7546,6 +8246,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Малое Безумие",
     "circle": 1,
     "traditions": "Хаос",
@@ -7556,6 +8257,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "Длительность Безумия увеличена до 2 Кубиков Действия"
   },
   {
+    id: spellId(),
     "name": "Щупальце из Портала",
     "circle": 1,
     "traditions": "Хаос",
@@ -7566,6 +8268,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "При появлении Щупальце из Портала также наносит цели 3d6 Психического урона"
   },
   {
+    id: spellId(),
     "name": "Яма",
     "circle": 1,
     "traditions": "Хаос",
@@ -7578,6 +8281,7 @@ export const chaosSpells: SpellInfo[] = [
     "square": "Куб 1x1x1"
   },
   {
+    id: spellId(),
     "name": "Свежий Табак",
     "circle": 1,
     "traditions": "Хаос",
@@ -7590,6 +8294,7 @@ export const chaosSpells: SpellInfo[] = [
     "square": "Радиус 2 клетки"
   },
   {
+    id: spellId(),
     "name": "Липкие Пальцы",
     "circle": 1,
     "traditions": "Хаос",
@@ -7601,6 +8306,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "до конца раунда"
   },
   {
+    id: spellId(),
     "name": "Жестокость",
     "circle": 1,
     "traditions": "Хаос",
@@ -7612,6 +8318,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Улыбка Фортуны",
     "circle": 1,
     "traditions": "Хаос",
@@ -7623,6 +8330,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Призыв Беса",
     "circle": 1,
     "traditions": "Хаос",
@@ -7634,6 +8342,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Джовушкер",
     "circle": 1,
     "traditions": "Хаос",
@@ -7645,6 +8354,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "до конца раунда"
   },
   {
+    id: spellId(),
     "name": "Хитрость Густаво",
     "circle": 1,
     "traditions": "Хаос",
@@ -7656,6 +8366,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Изгиб Пространства",
     "circle": 1,
     "traditions": "Хаос",
@@ -7667,6 +8378,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Кукла-Носок",
     "circle": 1,
     "traditions": "Хаос",
@@ -7678,6 +8390,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "24 часа"
   },
   {
+    id: spellId(),
     "name": "Неточность",
     "circle": 1,
     "traditions": "Хаос",
@@ -7689,6 +8402,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "24 часа"
   },
   {
+    id: spellId(),
     "name": "Гадание на Кофейной Гуще",
     "circle": 1,
     "traditions": "Хаос",
@@ -7699,6 +8413,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Обнаружение Закона",
     "circle": 1,
     "traditions": "Хаос",
@@ -7709,6 +8424,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Маска Сектанта",
     "circle": 2,
     "traditions": "Хаос",
@@ -7720,6 +8436,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Свиная Кавалерия",
     "circle": 2,
     "traditions": "Хаос",
@@ -7731,6 +8448,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Форма Гуманоида",
     "circle": 2,
     "traditions": "Хаос",
@@ -7742,6 +8460,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Молния Хаоса",
     "circle": 2,
     "traditions": "Хаос",
@@ -7752,6 +8471,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "Урон Электричеством увеличен на 3d6!"
   },
   {
+    id: spellId(),
     "name": "Заряд Скверны",
     "circle": 2,
     "traditions": "Хаос",
@@ -7762,6 +8482,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "Урон Некротикой увеличен на 1d6, а призванные Бесы получают по 13 временных Очков Здоровья"
   },
   {
+    id: spellId(),
     "name": "Грибная Лихорадка",
     "circle": 2,
     "traditions": "Хаос",
@@ -7772,6 +8493,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "Выросшие на цели плодовые тела грибов являются ядовитыми мухоморами. Цель получает 2d6 урона Ядом и Отравлена на значение, равное полученному урону Ядом"
   },
   {
+    id: spellId(),
     "name": "Случайный Взрыв",
     "circle": 2,
     "traditions": "Хаос",
@@ -7783,6 +8505,7 @@ export const chaosSpells: SpellInfo[] = [
     "square": "Радиус 1d4 клетки"
   },
   {
+    id: spellId(),
     "name": "Обезьяний Банан",
     "circle": 2,
     "traditions": "Хаос",
@@ -7793,6 +8516,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "Изначальный урон Ядом увеличен на 1d4, как и значение Тошноты"
   },
   {
+    id: spellId(),
     "name": "Столб",
     "circle": 2,
     "traditions": "Хаос",
@@ -7805,6 +8529,7 @@ export const chaosSpells: SpellInfo[] = [
     "square": "Квадрат 2x2"
   },
   {
+    id: spellId(),
     "name": "Бесоформация",
     "circle": 2,
     "traditions": "Хаос",
@@ -7816,6 +8541,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "1d4-1 Кубиков Действия"
   },
   {
+    id: spellId(),
     "name": "Судьбоносность",
     "circle": 2,
     "traditions": "Хаос",
@@ -7827,6 +8553,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Белиберда",
     "circle": 2,
     "traditions": "Хаос",
@@ -7838,6 +8565,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Слепота Реальности",
     "circle": 2,
     "traditions": "Хаос",
@@ -7849,6 +8577,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Вакханалия",
     "circle": 2,
     "traditions": "Хаос",
@@ -7860,6 +8589,7 @@ export const chaosSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Дави Беса",
     "circle": 2,
     "traditions": "Хаос",
@@ -7870,6 +8600,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "Дробящий урон и временные Очки Здоровья вам увеличены до 25"
   },
   {
+    id: spellId(),
     "name": "Обезьяна-Паук",
     "circle": 2,
     "traditions": "Хаос",
@@ -7882,6 +8613,7 @@ export const chaosSpells: SpellInfo[] = [
     "square": "Квадрат 2x2x2"
   },
   {
+    id: spellId(),
     "name": "Проблеск",
     "circle": 2,
     "traditions": "Хаос",
@@ -7894,6 +8626,7 @@ export const chaosSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Изменить Размер",
     "circle": 2,
     "traditions": "Хаос",
@@ -7904,6 +8637,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Шипастые Волосы",
     "circle": 2,
     "traditions": "Хаос",
@@ -7915,6 +8649,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Цирковое Колесо",
     "circle": 2,
     "traditions": "Хаос",
@@ -7926,6 +8661,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Мир – Мой Холст",
     "circle": 2,
     "traditions": "Хаос",
@@ -7937,6 +8673,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Призыв Исчадия I",
     "circle": 2,
     "traditions": "Хаос",
@@ -7948,6 +8685,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Пентаграмма",
     "circle": 2,
     "traditions": "Хаос",
@@ -7960,6 +8698,7 @@ export const chaosSpells: SpellInfo[] = [
     "square": "Радиус 2 клетки"
   },
   {
+    id: spellId(),
     "name": "Парад",
     "circle": 2,
     "traditions": "Хаос",
@@ -7971,6 +8710,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "1 час"
   },
   {
+    id: spellId(),
     "name": "Контрабанда",
     "circle": 2,
     "traditions": "Хаос",
@@ -7982,6 +8722,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "24 часа",
   },
   {
+    id: spellId(),
     "name": "Создать Вино",
     "circle": 2,
     "traditions": "Хаос",
@@ -7993,6 +8734,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "24 часа"
   },
   {
+    id: spellId(),
     "name": "Зеркало Боли",
     "circle": 2,
     "traditions": "Хаос",
@@ -8003,6 +8745,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Отвод Глаз",
     "circle": 3,
     "traditions": "Хаос",
@@ -8014,6 +8757,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Запретные Знания",
     "circle": 3,
     "traditions": "Хаос",
@@ -8025,6 +8769,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Зелёная Хитрость",
     "circle": 1,
     "traditions": "Хаос",
@@ -8036,6 +8781,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Глаза Дьявола",
     "circle": 3,
     "traditions": "Хаос",
@@ -8047,6 +8793,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Бес-Фамильяр",
     "circle": 3,
     "traditions": "Хаос",
@@ -8058,6 +8805,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Двойники",
     "circle": 3,
     "traditions": "Хаос",
@@ -8069,6 +8817,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Режущий Оригами",
     "circle": 3,
     "traditions": "Хаос",
@@ -8079,6 +8828,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "Режущий урон увеличен на 3d6, как и потенциальное Кровотечение"
   },
   {
+    id: spellId(),
     "name": "Сосульки в Глаза",
     "circle": 3,
     "traditions": "Хаос",
@@ -8090,6 +8840,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Крещендо",
     "circle": 3,
     "traditions": "Хаос",
@@ -8101,6 +8852,7 @@ export const chaosSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Ядовитая Слизь",
     "circle": 3,
     "traditions": "Хаос",
@@ -8112,6 +8864,7 @@ export const chaosSpells: SpellInfo[] = [
     "square": "Конус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Кольцо Хаоса",
     "circle": 3,
     "traditions": "Хаос",
@@ -8123,6 +8876,7 @@ export const chaosSpells: SpellInfo[] = [
     "square": "Все клетки вокруг вас"
   },
   {
+    id: spellId(),
     "name": "Тихий Омут",
     "circle": 3,
     "traditions": "Хаос",
@@ -8133,6 +8887,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "Цель также получает 3d6 Психического урона"
   },
   {
+    id: spellId(),
     "name": "Облако Неудачника",
     "circle": 3,
     "traditions": "Хаос",
@@ -8144,6 +8899,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Безумие",
     "circle": 3,
     "traditions": "Хаос",
@@ -8154,6 +8910,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "Длительность Безумия увеличена до 4 Кубиков Действия"
   },
   {
+    id: spellId(),
     "name": "Толстый Бес",
     "circle": 3,
     "traditions": "Хаос",
@@ -8165,6 +8922,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Призванный Камикадзе",
     "circle": 3,
     "traditions": "Хаос",
@@ -8176,6 +8934,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Миазма Энтропии",
     "circle": 3,
     "traditions": "Хаос",
@@ -8188,6 +8947,7 @@ export const chaosSpells: SpellInfo[] = [
     "square": "Куб 2x2x2"
   },
   {
+    id: spellId(),
     "name": "Призыв Исчадия II",
     "circle": 3,
     "traditions": "Хаос",
@@ -8199,6 +8959,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Тактика Гарпии",
     "circle": 3,
     "traditions": "Хаос",
@@ -8210,6 +8971,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Бесовской Туман",
     "circle": 3,
     "traditions": "Хаос",
@@ -8222,6 +8984,7 @@ export const chaosSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Рьяное Пламя",
     "circle": 3,
     "traditions": "Хаос",
@@ -8233,6 +8996,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Крылья Хаоса",
     "circle": 3,
     "traditions": "Хаос",
@@ -8244,6 +9008,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Клоунский Нос",
     "circle": 3,
     "traditions": "Хаос",
@@ -8255,6 +9020,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Дополнительная Рука",
     "circle": 3,
     "traditions": "Хаос",
@@ -8266,6 +9032,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Антропоморфное Животное",
     "circle": 3,
     "traditions": "Хаос",
@@ -8277,6 +9044,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Создать Глаз",
     "circle": 3,
     "traditions": "Хаос",
@@ -8288,6 +9056,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "1 час",
   },
   {
+    id: spellId(),
     "name": "Ложноножка Слайма",
     "circle": 3,
     "traditions": "Хаос",
@@ -8298,6 +9067,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Алхимия Хаоса",
     "circle": 3,
     "traditions": "Хаос",
@@ -8308,6 +9078,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "Проверка Алхимии совершается без эффекта Порчи"
   },
   {
+    id: spellId(),
     "name": "Волшебное Зеркало",
     "circle": 3,
     "traditions": "Хаос",
@@ -8319,6 +9090,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "24 часа"
   },
   {
+    id: spellId(),
     "name": "Контроль Формы",
     "circle": 4,
     "traditions": "Хаос",
@@ -8329,6 +9101,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Хаотичные Приказы",
     "circle": 4,
     "traditions": "Хаос",
@@ -8340,6 +9113,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Допельгангер",
     "circle": 4,
     "traditions": "Хаос",
@@ -8351,6 +9125,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Рога Хаоса",
     "circle": 4,
     "traditions": "Хаос",
@@ -8362,6 +9137,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Корень Белены",
     "circle": 4,
     "traditions": "Хаос",
@@ -8373,6 +9149,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена/Ритуал"
   },
   {
+    id: spellId(),
     "name": "Планарный Якорь",
     "circle": 4,
     "traditions": "Хаос",
@@ -8384,6 +9161,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "24 часа"
   },
   {
+    id: spellId(),
     "name": "Заряд Гадкой Скверны",
     "circle": 4,
     "traditions": "Хаос",
@@ -8395,6 +9173,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Тоскливая Серость",
     "circle": 4,
     "traditions": "Хаос",
@@ -8406,6 +9185,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Пока не снято"
   },
   {
+    id: spellId(),
     "name": "Ледяной Кристалл",
     "circle": 4,
     "traditions": "Хаос",
@@ -8417,6 +9197,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Пока не снято"
   },
   {
+    id: spellId(),
     "name": "Бесометрия",
     "circle": 4,
     "traditions": "Хаос",
@@ -8428,6 +9209,7 @@ export const chaosSpells: SpellInfo[] = [
     "square": "Смотри текст"
   },
   {
+    id: spellId(),
     "name": "Черные Тентакли",
     "circle": 4,
     "traditions": "Хаос",
@@ -8440,6 +9222,7 @@ export const chaosSpells: SpellInfo[] = [
     "square": "Радиус 4 клетки"
   },
   {
+    id: spellId(),
     "name": "Карамельная Боль",
     "circle": 4,
     "traditions": "Хаос",
@@ -8450,6 +9233,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "Изначальный урон Огнём увеличен на 3d6, как и значение Поджигания"
   },
   {
+    id: spellId(),
     "name": "Коллапс",
     "circle": 4,
     "traditions": "Хаос",
@@ -8462,6 +9246,7 @@ export const chaosSpells: SpellInfo[] = [
     "square": "Радиус 6 клеток"
   },
   {
+    id: spellId(),
     "name": "Проклятье Отрешенности",
     "circle": 4,
     "traditions": "Хаос",
@@ -8473,6 +9258,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Пока не снято"
   },
   {
+    id: spellId(),
     "name": "Поцелуй Суккуба",
     "circle": 4,
     "traditions": "Хаос",
@@ -8483,6 +9269,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "Негативные уровни увеличены с 2 до 3, урон в Харизму на 2"
   },
   {
+    id: spellId(),
     "name": "Песнь Сирен",
     "circle": 4,
     "traditions": "Хаос",
@@ -8493,6 +9280,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "Нет"
   },
   {
+    id: spellId(),
     "name": "Призыв Исчадия III",
     "circle": 4,
     "traditions": "Хаос",
@@ -8504,6 +9292,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Бес-Чернокнижник",
     "circle": 4,
     "traditions": "Хаос",
@@ -8515,6 +9304,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Хлыст-Сороконожка",
     "circle": 4,
     "traditions": "Хаос",
@@ -8526,6 +9316,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Въевшаяся Вонь",
     "circle": 4,
     "traditions": "Хаос",
@@ -8537,6 +9328,7 @@ export const chaosSpells: SpellInfo[] = [
     "duration": "Сцена"
   },
   {
+    id: spellId(),
     "name": "Ловушкагедон",
     "circle": 4,
     "traditions": "Хаос",
@@ -8547,6 +9339,7 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "Вы создаёте ещё одну копию установленной ловушки"
   },
   {
+    id: spellId(),
     "name": "Салат из Красного Редиса",
     "circle": 4,
     "traditions": "Хаос",
@@ -8557,3 +9350,14 @@ export const chaosSpells: SpellInfo[] = [
     "critical_effect": "???"
   }
 ]
+
+export const spellList: SpellList = {
+  'Тьма': darkSpells,
+  'Теургия': theurgySpells,
+  'Стихии': arcaneSpells,
+  'Свет': lightSpells,
+  'Природа': elementalSpells,
+  'Мистика': natureSpells,
+  'Аркана': mysticismSpells,
+  'Хаос': chaosSpells
+}
