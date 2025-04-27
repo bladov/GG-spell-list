@@ -17,6 +17,8 @@ declare global {
 		"duration"?: string,
 		"square"?: string
 	}
+
+	type Cube = '12' | '14' | '16' | '20' | '24' | '30'
 }
 
 export { };
