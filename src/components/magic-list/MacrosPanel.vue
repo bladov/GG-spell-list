@@ -1,9 +1,17 @@
 <script setup lang="ts">
+
 import { useCharacterStore } from '@/store/characterStore/index';
 import { spellList } from '@/utils/spellList';
 
 const characterStore = useCharacterStore()
 
+const storageSpellFavorite = storage.defineItem<string[]>(
+  `local:favoriteList`
+);
+
+onMounted(async () => {
+  await storageSpellFavorite.setValue([])
+})
 </script>
 
 <template>

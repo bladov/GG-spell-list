@@ -28,10 +28,12 @@ declare module 'vue' {
     Select: typeof import('primevue/select')['default']
     SpeedDial: typeof import('primevue/speeddial')['default']
     SpellCard: typeof import('./src/components/spell-card/SpellCard.vue')['default']
+    SpellCardWrapper: typeof import('./src/components/spell-card-wrapper/SpellCardWrapper.vue')['default']
     Tab: typeof import('primevue/tab')['default']
     TabList: typeof import('primevue/tablist')['default']
     TabPanel: typeof import('primevue/tabpanel')['default']
     TabPanels: typeof import('primevue/tabpanels')['default']
     Tabs: typeof import('primevue/tabs')['default']
+    ToggleSwitch: typeof import('primevue/toggleswitch')['default']
   }
 }

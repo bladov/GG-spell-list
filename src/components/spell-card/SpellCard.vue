@@ -14,7 +14,8 @@ interface StorageSpell {
         level: string;
         attribute: string;
     },
-    selectedCube: CubeOptions
+    selectedCube: CubeOptions,
+    isFavorite: boolean
 }
 
 const { spellInfo } = defineProps<{ spellInfo: SpellInfo }>()
@@ -22,6 +23,11 @@ const spellId = spellInfo.id.toString()
 const storageSpell = storage.defineItem<StorageSpell>(
     `local:spell-${spellId}`
 );
+
+const storageSpellFavorite = storage.defineItem<string[]>(
+    `local:favoriteList`
+);
+
 
 const selectedCube = ref<CubeOptions>({ name: '1d20', code: '20' })
 const cubeOptions = ref<CubeOptions[]>([
@@ -38,6 +44,8 @@ const spellModInfo = reactive({
     level: '',
     attribute: '',
 })
+
+const isAddToCharacter = ref(false)
 
 const diceMod = computed(() => {
     const levelMod = Math.floor(Number(spellModInfo.level) / 2)
@@ -60,10 +68,37 @@ watch(() => selectedCube.value, async () => {
 
     const spellInfoData = {
         spellModInfo: storageSpellInfo?.spellModInfo || spellModInfo,
-        selectedCube: selectedCube.value
+        selectedCube: selectedCube.value,
+        isFavorite: storageSpellInfo?.isFavorite || isAddToCharacter.value
     }
 
     await storageSpell.setValue(spellInfoData);
+})
+
+watch(() => isAddToCharacter.value, async () => {
+    const storageSpellInfo = await storageSpell.getValue()
+
+    const spellInfoData = {
+        spellModInfo: storageSpellInfo?.spellModInfo || spellModInfo,
+        selectedCube: storageSpellInfo?.selectedCube || selectedCube.value,
+        isFavorite: isAddToCharacter.value
+    }
+
+    await storageSpell.setValue(spellInfoData);
+
+    const favoriteList = await storageSpellFavorite.getValue()
+
+    if (!isAddToCharacter.value) {
+        if (!favoriteList) return
+
+        const filterFavorite = favoriteList.filter(id => id !== spellId)
+
+        await storageSpellFavorite.setValue(filterFavorite)
+    } else {
+        if (!favoriteList) return
+        favoriteList.push(spellId)
+        await storageSpellFavorite.setValue(favoriteList)
+    }
 })
 
 watch(() => spellModInfo, async () => {
@@ -74,7 +109,8 @@ watch(() => spellModInfo, async () => {
             ...storageSpellInfo?.spellModInfo,
             ...spellModInfo
         },
-        selectedCube: storageSpellInfo?.selectedCube || selectedCube.value
+        selectedCube: storageSpellInfo?.selectedCube || selectedCube.value,
+        isFavorite: storageSpellInfo?.isFavorite || isAddToCharacter.value
     }
 
     await storageSpell.setValue(spellInfoData);
@@ -88,7 +124,8 @@ onMounted(async () => {
     if (!storageSpellInfo) {
         const spellInfoData = {
             spellModInfo: spellModInfo,
-            selectedCube: selectedCube.value
+            selectedCube: selectedCube.value,
+            isFavorite: false
         }
 
         await storageSpell.setValue(spellInfoData);
@@ -102,12 +139,22 @@ onMounted(async () => {
     spellModInfo.attribute = storageSpellInfo.spellModInfo.attribute
 
     selectedCube.value = storageSpellInfo.selectedCube as any
+
+    isAddToCharacter.value = storageSpellInfo.isFavorite
 })
 </script>
 
 <template>
     <Card class="spellCard">
-        <template #title>{{ spellInfo.name }}</template>
+        <template #title>
+            <div class="title">
+                <h3>{{ spellInfo.name }}</h3>
+                <div class="switchWrapper">
+                    <p>В избранное</p>
+                    <ToggleSwitch v-model="isAddToCharacter" title="23" />
+                </div>
+            </div>
+        </template>
         <template #content>
             <p class="m-0; mb-2">
                 <i><b>Круг</b></i>: {{ spellInfo.circle }}
@@ -173,13 +220,26 @@ onMounted(async () => {
 </template>
 
 <style scoped>
+.title {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.switchWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.switchWrapper p {
+    font-size: 14px;
+}
+
 .spellCard {
     font-size: 16px;
     margin-bottom: 30px;
-
-    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-   */
-
     border-left: 1px solid white;
     border-top: 1px solid white;
     box-shadow: rgba(15, 214, 82, 0.4) 5px 5px, rgba(15, 214, 82, 0.3) 10px 10px, rgba(15, 214, 82, 0.2) 15px 15px, rgba(15, 214, 82, 0.1) 20px 20px, rgba(15, 214, 82, 0.05) 25px 25px;

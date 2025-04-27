@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@primevue/themes": "^4.2.2",
+    "@vueuse/core": "^13.1.0",
     "pinia": "^2.2.6",
     "primeicons": "^7.0.0",
     "primevue": "^4.2.2",
