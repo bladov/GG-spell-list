@@ -97,7 +97,8 @@ watch(() => isAddToCharacter.value, async () => {
     } else {
         if (!favoriteList) return
         favoriteList.push(spellId)
-        await storageSpellFavorite.setValue(favoriteList)
+        const withoutDuplicates = Array.from(new Set(favoriteList))
+        await storageSpellFavorite.setValue(withoutDuplicates)
     }
 })
 

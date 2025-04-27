@@ -10,6 +10,9 @@ const storageSpellFavorite = storage.defineItem<string[]>(
 );
 
 onMounted(async () => {
+
+  const hasFavorite = await storageSpellFavorite.getValue()
+  if (hasFavorite) return
   await storageSpellFavorite.setValue([])
 })
 </script>
