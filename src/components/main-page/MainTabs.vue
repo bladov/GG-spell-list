@@ -1,7 +1,6 @@
 <script lang="ts" setup>
-import CharacterListMenu from '@/components/character-list/CharacterListMenu.vue'
-import CharacterSettings from '@/components/character-settings/CharacterSettings.vue'
-import MacrosPanel from '@/components/magic-list/MacrosPanel.vue'
+import CharacterSettings from '@/components/character-settings/CharacterSettings.vue';
+import MacrosPanel from '@/components/magic-list/MacrosPanel.vue';
 
 // const tabTitle = ref(['Магия', 'Статы и Модификаторы', 'Персонажи'])
 const tabInfo = reactive([
@@ -12,10 +11,6 @@ const tabInfo = reactive([
   {
     title: 'Персонаж',
     value: '1',
-  },
-  {
-    title: 'Персонажи',
-    value: '2',
   },
 ])
 
@@ -39,9 +34,9 @@ const tabInfo = reactive([
         <TabPanel value="1">
           <CharacterSettings />
         </TabPanel>
-        <TabPanel value="2">
+        <!-- <TabPanel value="2">
           <CharacterListMenu />
-        </TabPanel>
+        </TabPanel> -->
       </TabPanels>
     </Tabs>
   </div>
