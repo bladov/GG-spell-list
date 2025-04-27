@@ -1,23 +1,14 @@
 <script setup lang="ts">
-import { useCharacterStore } from '@/store/characterStore/index'
-import { spellList } from '@/utils/spellList'
+import { useCharacterStore } from '@/store/characterStore/index';
+import { spellList } from '@/utils/spellList';
 
 const characterStore = useCharacterStore()
 
-
-
-const spells = ref([
-  {
-    title: 'Тьма',
-    spellList: darkSpells,
-    id: 0
-  }
-])
 </script>
 
 <template>
   <div>
-    <Accordion value="0">
+    <Accordion value="0" lazy>
       <AccordionPanel v-for="(spells, schoolType) in spellList" :key="schoolType" :value="schoolType">
         <AccordionHeader class="schoolTitle">{{ schoolType }}</AccordionHeader>
         <AccordionContent>

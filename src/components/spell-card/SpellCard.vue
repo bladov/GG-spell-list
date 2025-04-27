@@ -7,6 +7,21 @@ interface CubeOptions {
     code: Cube
 }
 
+interface StorageSpell {
+    spellModInfo: {
+        mod: string;
+        stars: string;
+        level: string;
+        attribute: string;
+    },
+    selectedCube: CubeOptions
+}
+
+const { spellInfo } = defineProps<{ spellInfo: SpellInfo }>()
+const spellId = spellInfo.id.toString()
+const storageSpell = storage.defineItem<StorageSpell>(
+    `local:spell-${spellId}`
+);
 
 const selectedCube = ref<CubeOptions>({ name: '1d20', code: '20' })
 const cubeOptions = ref<CubeOptions[]>([
@@ -32,19 +47,71 @@ const diceMod = computed(() => {
     return num.toString()
 })
 
-const { spellInfo } = defineProps<{ spellInfo: SpellInfo }>()
+
 
 const castSpell = (spell: SpellInfo, cube: Cube, diceBonus: string) => {
     const spellTemplate = createTemplateSpell(spell, cube, diceBonus)
 
     sendMsgToChat(spellTemplate)
 }
+
+watch(() => selectedCube.value, async () => {
+    const storageSpellInfo = await storageSpell.getValue()
+
+    const spellInfoData = {
+        spellModInfo: storageSpellInfo?.spellModInfo || spellModInfo,
+        selectedCube: selectedCube.value
+    }
+
+    await storageSpell.setValue(spellInfoData);
+})
+
+watch(() => spellModInfo, async () => {
+    const storageSpellInfo = await storageSpell.getValue()
+
+    const spellInfoData = {
+        spellModInfo: {
+            ...storageSpellInfo?.spellModInfo,
+            ...spellModInfo
+        },
+        selectedCube: storageSpellInfo?.selectedCube || selectedCube.value
+    }
+
+    await storageSpell.setValue(spellInfoData);
+}, {
+    deep: true
+})
+
+onMounted(async () => {
+    const storageSpellInfo = await storageSpell.getValue()
+
+    if (!storageSpellInfo) {
+        const spellInfoData = {
+            spellModInfo: spellModInfo,
+            selectedCube: selectedCube.value
+        }
+
+        await storageSpell.setValue(spellInfoData);
+
+        return
+    }
+
+    spellModInfo.mod = storageSpellInfo.spellModInfo.mod
+    spellModInfo.stars = storageSpellInfo.spellModInfo.stars
+    spellModInfo.level = storageSpellInfo.spellModInfo.level
+    spellModInfo.attribute = storageSpellInfo.spellModInfo.attribute
+
+    selectedCube.value = storageSpellInfo.selectedCube as any
+})
 </script>
 
 <template>
     <Card class="spellCard">
         <template #title>{{ spellInfo.name }}</template>
         <template #content>
+            <p>
+                id: {{ spellInfo.id }}
+            </p>
             <p class="m-0; mb-2">
                 <i><b>Круг</b></i>: {{ spellInfo.circle }}
             </p>
