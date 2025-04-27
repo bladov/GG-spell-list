@@ -109,9 +109,6 @@ onMounted(async () => {
     <Card class="spellCard">
         <template #title>{{ spellInfo.name }}</template>
         <template #content>
-            <p>
-                id: {{ spellInfo.id }}
-            </p>
             <p class="m-0; mb-2">
                 <i><b>Круг</b></i>: {{ spellInfo.circle }}
             </p>
