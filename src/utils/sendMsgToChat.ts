@@ -14,9 +14,6 @@ function sendMsg(msg: string) {
     if (!window.textarea || !window.chatSendBtn) {
       window.textarea = document.querySelector('textarea[title="Text Chat Input"]')
       window.chatSendBtn = document.querySelector('#chatSendBtn')
-
-      window.textarea.value = 'test'
-      window.chatSendBtn.click()
     }
 
     window.textarea.value = msg
