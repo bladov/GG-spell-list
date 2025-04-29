@@ -2,12 +2,25 @@ function onResult() {
   console.log('onResult', 23)
 }
 
+declare global {
+  interface Window {
+    textarea?: any;
+    chatSendBtn?: any;
+  }
+}
+
 function sendMsg(msg: string) {
   try {
-    const textarea: any = document.querySelector('textarea[title="Text Chat Input"]')
-    const chatSendBtn: any = document.querySelector('#chatSendBtn')
-    textarea.value = msg
-    chatSendBtn.click()
+    if (!window.textarea || !window.chatSendBtn) {
+      window.textarea = document.querySelector('textarea[title="Text Chat Input"]')
+      window.chatSendBtn = document.querySelector('#chatSendBtn')
+
+      window.textarea.value = 'test'
+      window.chatSendBtn.click()
+    }
+
+    window.textarea.value = msg
+    window.chatSendBtn.click()
   }
   catch (error) {
     console.error('error', error)
