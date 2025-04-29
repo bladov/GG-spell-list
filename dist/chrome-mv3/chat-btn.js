@@ -1,0 +1,2 @@
+var chatBtn=function(){"use strict";function c(t){return t}const n={matches:["*://*/*"],main(t){return console.log("ctx",t),document.querySelector('textarea[title="Text Chat Input"]')}};function a(){}function e(t,...o){}const r={debug:(...t)=>e(console.debug,...t),log:(...t)=>e(console.log,...t),warn:(...t)=>e(console.warn,...t),error:(...t)=>e(console.error,...t)};return(async()=>{try{return await n.main()}catch(t){throw r.error('The unlisted script "chat-btn" crashed on startup!',t),t}})()}();
+chatBtn;
