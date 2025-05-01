@@ -9015,3 +9015,32 @@ export const spellList: SpellList = {
   'Аркана': arcaneSpells,
   'Хаос': chaosSpells
 }
+
+export function searchSpellIds(spellList: SpellList, stringSearchValue: string): number[] {
+  if (stringSearchValue.length < 2) return [];
+
+  const query = stringSearchValue.toLowerCase().trim();
+  const resultIds = new Set<number>();
+
+  Object.values(spellList).forEach(spells => {
+    spells.forEach(spell => {
+      const fieldsToSearch = [
+        spell.name,
+        spell.type,
+        spell.pronunciation,
+        spell.range,
+        spell.effect,
+        spell.critical_effect,
+        spell.duration || '',
+        spell.square || '',
+        ...spell.traditions
+      ];
+
+      if (fieldsToSearch.some(field => field.toLowerCase().includes(query))) {
+        resultIds.add(spell.id);
+      }
+    });
+  });
+
+  return Array.from(resultIds);
+}

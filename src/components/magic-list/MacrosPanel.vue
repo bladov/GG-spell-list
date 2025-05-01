@@ -1,24 +1,48 @@
 <script setup lang="ts">
 
-import { useCharacterStore } from '@/store/characterStore/index';
-import { spellList } from '@/utils/spellList';
+import { useSpellSearch } from '@/composables/useSpellSearch';
 
-const characterStore = useCharacterStore()
+
+import { spellList } from '@/utils/spellList';
 
 const storageSpellFavorite = storage.defineItem<string[]>(
   `local:favoriteList`
 );
 
-onMounted(async () => {
+const searchInput = ref('')
+const { foundSpellIds } = useSpellSearch(spellList, searchInput);
 
+onMounted(async () => {
   const hasFavorite = await storageSpellFavorite.getValue()
   if (hasFavorite) return
   await storageSpellFavorite.setValue([])
 })
+
 </script>
 
 <template>
   <div>
+    <div class="flex flex-col gap-2">
+      <label for="username">Поиск</label>
+      <InputText class="mb-2 mw-400" id="username" aria-describedby="username-help" label="Поиск" type="text"
+        v-model="searchInput" />
+      <Message size="small" severity="secondary" variant="simple">Поиск заклинаний (минимум 3 символа)...</Message>
+    </div>
+
+    <div v-show="foundSpellIds.length" class="mb-2">
+      <div class="mb-2">
+        Найдено заклинаний: {{ foundSpellIds.length }}
+      </div>
+
+      <div>
+        <SpellCard v-for="spell in foundSpellIds" :key="spell.name" :spellInfo='spell' />
+      </div>
+    </div>
+
+    <div v-if="searchInput.length >= 3 && foundSpellIds.length === 0" class="mb-2">
+      Ничего не найдено.
+    </div>
+
     <Accordion value="0" lazy>
       <AccordionPanel v-for="(spells, schoolType) in spellList" :key="schoolType" :value="schoolType">
         <AccordionHeader class="schoolTitle">{{ schoolType }}</AccordionHeader>

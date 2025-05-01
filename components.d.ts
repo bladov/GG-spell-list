@@ -22,6 +22,7 @@ declare module 'vue' {
     InputText: typeof import('primevue/inputtext')['default']
     MacrosPanel: typeof import('./src/components/magic-list/MacrosPanel.vue')['default']
     MainTabs: typeof import('./src/components/main-page/MainTabs.vue')['default']
+    Message: typeof import('primevue/message')['default']
     Select: typeof import('primevue/select')['default']
     SpellCard: typeof import('./src/components/spell-card/SpellCard.vue')['default']
     SpellCardWrapper: typeof import('./src/components/spell-card-wrapper/SpellCardWrapper.vue')['default']

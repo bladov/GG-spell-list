@@ -19,6 +19,7 @@
   "dependencies": {
     "@primevue/themes": "^4.2.2",
     "@vueuse/core": "^13.1.0",
+    "lodash.debounce": "^4.0.8",
     "pinia": "^2.2.6",
     "primeicons": "^7.0.0",
     "primevue": "^4.2.2",
@@ -29,6 +30,7 @@
     "@antfu/eslint-config": "^4.1.0",
     "@primevue/auto-import-resolver": "^4.2.2",
     "@types/chrome": "^0.0.269",
+    "@types/lodash.debounce": "^4.0.9",
     "@wxt-dev/module-vue": "^1.0.1",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.19.0",
